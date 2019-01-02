@@ -2,27 +2,61 @@ package com.jp.lms.source.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="LMS_PROSPECT")
 public class Prospect {
+	@Id
+	@Column(name="PROSPECT_ID")
 	private String prospectId;
+	
+	@Column(name="FIRST_NAME")
 	private String firstName;
+	
+	@Column(name="LAST_NAME")
 	private String lastName;
+	
+	@Column(name="ADDRESS")
 	private String address;
+	
+	@Column(name="LOAN_TYPE")
 	private String loanType;
+	
+	@Column(name="INCOME")
 	private Double income;
+	
+	@Column(name="REQUIRED_LOAN_AMT")
 	private Double requiredLoanAmt;
+	
+	@Column(name="PAN_NUMBER")
 	private String panNumber;
+	
+	@Column(name="AADHAR_NUMBER")
 	private String aadharNumber;
+	
+	@Column(name="CONTACT_NUMBER")
 	private Integer contactNumber;
+	
+	@Column(name="EMAIL")
 	private String email;
+	
+	@Column(name="ENQUIRY_DATE")
 	private Date enquiryDate;
+	
+	@Column(name="DOB")
 	private Date dateOfBirth;
+	
+	@Column(name="CITY")
 	private String city;
+	
+	@Column(name="CREDIT_LIMIT")
 	private Double creditLimit;
+	
+	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditDate;
 	
 	public String getProspectId() {

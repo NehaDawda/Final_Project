@@ -1,10 +1,27 @@
 package com.jp.lms.source.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LMS_BANEK_EMPLOYEE")
 public class BankEmployee {
+	@Id
+	@Column(name="EMP_ID")
 	private String empId;
+	
+	@Column(name="EMP_NAME")
 	private String empName;
+	
+	@Column(name="CONTACT_NUMBER")
 	private Integer contactNumber;
+	
+	@Column(name="EMAIL")
 	private String email;
+	
+	@Column(name="EMP_TYPE")
 	private String empType;
 	
 	public String getEmpId() {

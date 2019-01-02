@@ -1,16 +1,46 @@
 package com.jp.lms.source.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LMS_PROPERTY")
 public class Property {
+	
+	@Id
+	@Column(name="PROPERTY_ID")
 	private String propertyId;
+	
+	@Column(name="APARTMENT_NUMBER")
 	private String apartmentNo;
+	
+	@Column(name="APARTMENT_NAME")
 	private String apartmentName;
+	
+	@Column(name="STREET_NAME")
 	private String streetName;
+	
+	@Column(name="LOCALITY")
 	private String locality;
+	
+	@Column(name="LANDMARK")
 	private String landmark;
+	
+	@Column(name="CITY")
 	private String city;
+	
+	@Column(name="STATE")
 	private String state;
+	
+	@Column(name="COUNTRY")
 	private String country;
+	
+	@Column(name="ZIPCODE")	
 	private String zipCode;
+	
+	@Column(name="PURCHASE_PRICE")
 	private Double purchasedPrice;
 	
 	public String getPropertyId() {

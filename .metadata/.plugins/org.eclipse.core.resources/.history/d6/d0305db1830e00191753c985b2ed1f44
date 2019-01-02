@@ -1,0 +1,5 @@
+package com.jp.jms.source.exceptions;
+
+public class LmsException {
+
+}
