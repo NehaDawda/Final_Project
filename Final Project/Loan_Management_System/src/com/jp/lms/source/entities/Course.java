@@ -2,14 +2,37 @@ package com.jp.lms.source.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LMS_COURSE_DETAILS")
 public class Course {
+	@Id
+	@Column(name="COURSE_ID")
 	private String courseId;
+	
+	@Column(name="COURSE_NAME")
 	private String courseName;
+	
+	@Column(name="COLLEGE_NAME")
 	private String collegeName;
+	
+	@Column(name="UNIVERSITY")
 	private String university;
+	
+	@Column(name="START_DATE")
 	private Date startDate;
+	
+	@Column(name="END_DATE")
 	private Date endDate;
+	
+	@Column(name="DURATION")
 	private Integer duration;
+	
+	@Column(name="FEES")
 	private Double fees;
 	
 	public String getCourseId() {

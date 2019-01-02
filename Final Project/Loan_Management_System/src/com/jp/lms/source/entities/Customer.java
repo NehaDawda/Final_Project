@@ -2,17 +2,47 @@ package com.jp.lms.source.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LMS_CUSTOMER")
 public class Customer {
+	
+	@Id
+	@Column(name="CUSTOMER_ID")
 	private String customerId;
+	
+	@Column(name="FIRST_NAME")
 	private String firstName;
+	
+	@Column(name="LAST_NAME")
 	private String lastName;
+	
+	@Column(name="ADDRESS")
 	private String address;
+	
+	@Column(name="PAN_NUMBER")
 	private String panNumber;
+	
+	@Column(name="AADHAR_NUMBER")
 	private String aadharNumber;
+	
+	@Column(name="CONTACT_NUMBER")
 	private Integer contactNumber;
+	
+	@Column(name="EMAIL")
 	private String email;
+	
+	@Column(name="DOB")
 	private Date dateOfBirth;
+	
+	@Column(name="CREDIT_LIMIT")
 	private Double creditLimit;
+	
+	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditDate;
 	
 	public String getCustomerId() {
