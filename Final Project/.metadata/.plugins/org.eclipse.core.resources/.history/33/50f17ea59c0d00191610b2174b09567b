@@ -1,0 +1,16 @@
+package com.jp.lms.source.entities;
+
+public class Property {
+	private String propertyId;
+	private String apartmentNo;
+	private String apartmentName;
+	private String streetName;
+	private String locality;
+	private String landmark;
+	private String city;
+	private String state;
+	private String country;
+	private String zipCode;
+	private Double purchasedPrice;
+	
+}

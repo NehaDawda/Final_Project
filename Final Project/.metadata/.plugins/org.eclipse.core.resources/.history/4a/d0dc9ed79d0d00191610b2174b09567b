@@ -1,0 +1,5 @@
+package com.jp.lms.source.entities;
+
+public class VechicleCategory {
+
+}

@@ -1,0 +1,105 @@
+package com.jp.lms.source.entities;
+
+import java.util.Date;
+
+public class Customer {
+	private String customerId;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String panNumber;
+	private String aadharNumber;
+	private Long contactNumber;
+	private String email;
+	private Date dateOfBirth;
+	private double creditLimit;
+	private Date lastUpdatedCreditDate;
+	
+	public String getCustomerId() {
+		return customerId;
+	}
+	
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	public String getPanNumber() {
+		return panNumber;
+	}
+	
+	public void setPanNumber(String panNumber) {
+		this.panNumber = panNumber;
+	}
+	
+	public String getAadharNumber() {
+		return aadharNumber;
+	}
+	
+	public void setAadharNumber(String aadharNumber) {
+		this.aadharNumber = aadharNumber;
+	}
+	
+	public long getContactNumber() {
+		return contactNumber;
+	}
+	
+	public void setContactNumber(long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
+	public double getCreditLimit() {
+		return creditLimit;
+	}
+	
+	public void setCreditLimit(double creditLimit) {
+		this.creditLimit = creditLimit;
+	}
+	
+	public Date getLastUpdatedCreditDate() {
+		return lastUpdatedCreditDate;
+	}
+	
+	public void setLastUpdatedCreditDate(Date lastUpdatedCreditDate) {
+		this.lastUpdatedCreditDate = lastUpdatedCreditDate;
+	}
+}

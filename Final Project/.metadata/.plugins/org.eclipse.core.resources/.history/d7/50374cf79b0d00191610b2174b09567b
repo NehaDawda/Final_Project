@@ -1,0 +1,18 @@
+package com.jp.lms.source.entities;
+
+import java.util.Date;
+
+public class Loan {
+	private Integer loanAccNumber;
+	private Double loanAmount;
+	private String customerId;
+	private String loanType;
+	private Date loanApproveDate;
+	private Date dispersalDate;
+	private Double interestRate;
+	private Integer tenure;
+	private Date EMIStartDate;
+	private Date EMIEndDate;
+	private Double creditLimit;
+	private Date lastUpdatedCreditLimit;
+}

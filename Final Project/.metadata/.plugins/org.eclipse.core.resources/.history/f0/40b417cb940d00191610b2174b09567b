@@ -1,0 +1,24 @@
+package com.jp.lms.source.entities;
+
+import java.util.Date;
+
+public class Prospect {
+	private String prospectId;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String loanType;
+	private double income;
+	private double requiredLoanAmt;
+	private String panNumber;
+	private String aadharNumber;
+	private long contactNumber;
+	private String email;
+	private Date enquiryDate;
+	private Date dateOfBirth;
+	private String city;
+	private double creditLimit;
+	private Date lastUpdatedCreditDate;
+	
+	
+}

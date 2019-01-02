@@ -1,0 +1,17 @@
+package com.jp.lms.source.entities;
+
+import java.util.Date;
+
+public class Customer {
+	private String customerId;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String panNumber;
+	private String aadharNumber;
+	private long contactNumber;
+	private String email;
+	private Date dateOfBirth;
+	private double creditLimit;
+	private Date lastUpdatedCreditDate;
+}
