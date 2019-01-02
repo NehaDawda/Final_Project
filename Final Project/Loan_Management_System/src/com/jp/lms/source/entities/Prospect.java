@@ -2,6 +2,11 @@ package com.jp.lms.source.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LMS_PROSPECT")
 public class Prospect {
 	private String prospectId;
 	private String firstName;

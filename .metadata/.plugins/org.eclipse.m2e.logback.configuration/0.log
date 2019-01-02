@@ -1,0 +1,38 @@
+2019-01-02 15:03:17,043 [Worker-46] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.jp.lms:Loan_Management_System:0.0.1-SNAPSHOT @ C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\pom.xml.
+2019-01-02 15:03:18,428 [Worker-46] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Loan_Management_System/src
+2019-01-02 15:03:18,429 [Worker-46] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /Loan_Management_System/src/test/java because it overlaps with /Loan_Management_System/src
+2019-01-02 15:03:18,618 [Worker-46] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-01-02 15:03:19,000 [Worker-46] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.jp.lms:Loan_Management_System:0.0.1-SNAPSHOT @ C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\pom.xml.
+2019-01-02 15:03:19,353 [Worker-46] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Loan_Management_System/src
+2019-01-02 15:03:19,354 [Worker-46] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /Loan_Management_System/src/test/java because it overlaps with /Loan_Management_System/src
+2019-01-02 15:03:19,470 [Worker-46] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2019-01-02 15:03:20,109 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:03:20,113 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:03:20,116 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:03:20,116 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
+2019-01-02 15:06:58,522 [Worker-48] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.jp.lms:Loan_Management_System:0.0.1-SNAPSHOT @ C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\pom.xml.
+2019-01-02 15:06:58,792 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:06:58,793 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:06:58,795 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:06:58,796 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
+2019-01-02 15:07:00,391 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:00,392 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:07:00,393 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:00,394 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
+2019-01-02 15:07:01,481 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:01,490 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:07:01,492 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:01,493 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
+2019-01-02 15:07:08,531 [Worker-50] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-01-02 15:07:08,849 [Worker-50] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.jp.lms:Loan_Management_System:0.0.1-SNAPSHOT @ C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\pom.xml.
+2019-01-02 15:07:09,046 [Worker-50] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Loan_Management_System/src
+2019-01-02 15:07:09,046 [Worker-50] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /Loan_Management_System/src/test/java because it overlaps with /Loan_Management_System/src
+2019-01-02 15:07:09,179 [Worker-50] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2019-01-02 15:07:09,996 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:09,996 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:07:09,999 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:07:10,000 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
+2019-01-02 15:08:02,755 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:08:02,756 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\main\resources
+2019-01-02 15:08:02,759 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-01-02 15:08:02,760 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\Documents\GitHub\Final_Project\Final Project\Loan_Management_System\src\test\resources
