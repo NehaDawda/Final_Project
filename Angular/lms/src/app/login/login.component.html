@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+<body>
+  <form>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" name="name" class="form-control" pattern="[a-zA-Z][a-zA-Z]+" #NameControl="ngModel"
+              [(ngModel)]="name" required placeholder="Enter Name">
+            <div *ngIf="NameControl?.touched && NameControl?.invalid" class="alert alert-danger">
+              <div *ngIf="NameControl.errors?.required">
+                Name is required
+              </div>
+              <div *ngIf="NameControl.errors?.pattern">
+                Please enter Valid Name
+              </div>
+            </div>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      
+      
+          
+      <button type="submit" onclick="">Login</button>
+      <a href="/logout"><label>Create New Account</label></a> 
+  
+  
+  
+    </div>
+  </form>
+</body>
+</html>
