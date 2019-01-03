@@ -1,0 +1,10 @@
+package com.jp.lms.source.services;
+
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+public interface ServiceProspect {
+	//public List<Employee>  getEmpList() throws HrException;
+	//public Employee getEmpDetails(int empId) throws HrException;
+	public String joinNewEmployee(Prospect prospect) throws LmsException;
+}

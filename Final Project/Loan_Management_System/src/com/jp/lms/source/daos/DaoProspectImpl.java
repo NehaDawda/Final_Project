@@ -1,27 +1,57 @@
 package com.jp.lms.source.daos;
 
-import javax.persistence.Entity;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.sql.DataSource;
+import javax.persistence.Query;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
 
+@Repository("daoDS")
 public class DaoProspectImpl implements DaoProspect {
-	
-	@Autowired
-	private DataSource dataSource;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Override
-	@Transactional
-	public String insertNewRecord(Prospect prospect) {
+	@Transactional(propagation=Propagation.REQUIRED)
+	public String addProspect(Prospect prospect) {
 		entityManager.persist(prospect);
+		return prospect.getProspectId();
+	}
+
+	@Override
+	public List<Prospect> getAllPropects() throws LmsException {
+		String sql = "SELECT e FROM empRec e";
+		Query qry = entityManager.createQuery(sql);
+		List<Prospect> prospectList = qry.getResultList() ;
+		
+		return prospectList;
+	}
+
+	@Override
+	public Prospect getProspectDetails(String prospectId) throws LmsException {
+		Prospect prospect = entityManager.find(Prospect.class, prospectId);
+		return prospect;
+	}
+
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public String removeProspect(String prospectId) throws LmsException {
+		entityManager.remove(prospectId);
+		return prospectId;
+	}
+
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public String updateProspect(Prospect prospect) throws LmsException {
+		entityManager.merge(prospect);
 		return prospect.getProspectId();
 	}
 
