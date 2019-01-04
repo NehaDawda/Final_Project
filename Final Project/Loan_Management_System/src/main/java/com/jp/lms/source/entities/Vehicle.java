@@ -13,7 +13,7 @@ public class Vehicle {
 	
 	@Id
 	@Column(name="VEHICLE_ID")
-	private String vechicleId;
+	private String vehicleId;
 	
 	@Column(name="REGISTRATION_NUMBER")
 	private String registrationNumber;
@@ -33,12 +33,12 @@ public class Vehicle {
 	@Column(name="PRICE")
 	private Double purchasedPrice;
 	
-	public String getVechicleId() {
-		return vechicleId;
+	public String getVehicleId() {
+		return vehicleId;
 	}
 	
-	public void setVechicleId(String vechicleId) {
-		this.vechicleId = vechicleId;
+	public void setVechicleId(String vehicleId) {
+		this.vehicleId = vehicleId;
 	}
 	
 	public String getRegistrationNumber() {
