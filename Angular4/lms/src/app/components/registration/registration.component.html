@@ -1,3 +1,150 @@
-<p>
-  registration works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+<body>
+    <body>
+        <div class="container">
+          <form class="form-horizontal" role="form">
+              <form data-toggle="validator" role="form">
+              <h3>Registration Form</h3>
+              <div class="form-group">              
+                  <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required>                    
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label">Address</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="address" placeholder="Please Enter valid Address" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="address" class="col-sm-3 control-label">Loan Type</label>
+                  <br>
+              <select class="form-control">
+                  <option>Home Loan</option>
+                  <option>Vehicle Loan</option>
+                  <option>Education Loan</option>
+              </select>
+              </div>
+              <div class="form-group">
+                  <label for="income" class="col-sm-3 control-label">Income</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="income" placeholder="Please enter Annual Income" class="form-control" autofocus required>
+                    </div>
+              </div>
+              <div class="form-group">
+                  <label for="requiredLoanAmt" class="col-sm-3 control-label">Required Loan Amount</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="requiredLoanAmt" placeholder="Please Enter required Loan Amount" class="form-control" autofocus required>
+                    </div>
+              </div>
+              <div class="form-group">
+                  <label for="panNumber" class="col-sm-3 control-label">PAN Number</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="panNumber" placeholder="Please Enter valid PAN Number" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="aadharNumber" class="col-sm-3 control-label">Adhaar Number</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="aadharNumber" placeholder="Please Enter valid Adhaar Number" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="contactNumber" class="col-sm-3 control-label">Contact Number</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="contactNumber" placeholder="Please Enter Contact Number" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="email" class="col-sm-3 control-label">Email* </label>
+                  <div class="col-sm-9">
+                      <input type="email" id="email" placeholder="Email" class="form-control" name= "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="enquiryDate" class="col-sm-3 control-label">Enquiry Date</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="enquiryDate" placeholder="Enquiry Date" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class='col-sm-6'>
+                          <div class="form-group">
+                              <div class='input-group date' id='datetimepicker3'>
+                                  <input type='text' class="form-control" />
+                                  <span class="input-group-addon">
+                                      <span class="glyphicon glyphicon-time"></span>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                      <script type="text/javascript">
+                          $(function () {
+                              $('#datetimepicker3').datetimepicker({
+                                  format: 'LT'
+                              });
+                          });
+                      </script>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="city" class="col-sm-3 control-label">City</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="city" placeholder="City" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="creditLimit" class="col-sm-3 control-label">Credit Limit</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="creditLimit" placeholder="Credit Limit" class="form-control" autofocus required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="lastUpdatedCreditDate" class="col-sm-3 control-label">Last Updated Credit Date</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="lastUpdatedCreditDate" placeholder="Credit Limit" class="form-control" autofocus required>
+                  </div>
+              </div>              
+              <button type="submit" class="btn btn-primary btn-block" onclick="javascript:validate()">Register</button>
+              </form>
+          </form> <!-- /form -->
+      </div> <!-- ./container -->
+    
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>  
+    
+    
+    
+    
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+      <!-- Javascript -->
+      
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+      </body>
+</body>
+</html>
