@@ -5,3 +5,14 @@
 1546490988633	Rename package 'com.jp.jms.source.exceptions'
 1546491017799	Rename type 'ServiceEmployeeImpl'
 1546520108946	Rename type 'HomePageController'
+1546590535974	Move 'start' to 'source'
+1546590541394	Delete elements
+1546590871314	Move compilation unit
+1546592108468	Delete element
+1546592111707	Delete element
+1546592120164	Rename type 'ServiceProspectImpl1'
+1546592298155	Delete element
+1546592353330	Delete element
+1546593444666	Copy folder
+1546593584534	Delete element
+1546593587797	Delete element
