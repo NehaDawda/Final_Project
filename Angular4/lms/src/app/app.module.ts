@@ -7,6 +7,10 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpServiceComponent } from './http-service/http-service.component';
+import { ProspectDetailsComponent } from './prospect-details/prospect-details.component';
+import { ProspectdetailsComponent } from './components/prospectdetails/prospectdetails.component';
+import { ProspectListComponent } from './components/prospect-list/prospect-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { HomeComponent } from './components/home/home.component';
     RegistrationComponent,
     LoginComponent,
     LogoutComponent,
-    HomeComponent
+    HomeComponent,
+    HttpServiceComponent,
+    ProspectDetailsComponent,
+    ProspectdetailsComponent,
+    ProspectListComponent
   ],
   imports: [
     BrowserModule,
