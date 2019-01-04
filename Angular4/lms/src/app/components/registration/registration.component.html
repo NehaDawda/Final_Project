@@ -1,3 +1,147 @@
-<p>
-  registration works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prospect Form</title>
+  <style>
+    body{
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <table border=1 style="border-collapse:collapse; font-family:Arial; table-layout: fixed">
+    <tr style="background-color:silver; font-weight: bold">
+      <td colspan="3" style="padding:3px; white-space:nowrap; width:100%">
+        <h4>Prospect Form</h4>
+      </td>
+    </tr>
+    <tr style="background-color:silver; font-weight: bold">
+      <td style="padding:10px; white-space:nowrap; width:33%">
+        <div>touched : {{ prospectform.touched }}</div>
+        <div>untouched : {{ prospectform.untouched }}</div>
+      </td>
+      <td style="padding:10px; white-space:nowrap; width:33%">
+        <div>pristine : {{ prospectform.pristine }}</div>
+        <div>dirty : {{ prospectform.dirty }}</div>
+      </td>
+      <td style="padding:10px; white-space:nowrap; width:33%">
+        <div>valid : {{ prospectform.valid }}</div>
+        <div>invalid : {{ prospectform.invalid }}</div>
+      </td>
+    </tr>
+  </table>
+  <h1>Prospect Form</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <form #prospectform="ngForm" (ngSubmit)="UserFunction(prospectform)" ngNativeValidate>
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="firstname" #NameControl="ngModel"
+            ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="lastname" #NameControl="ngModel"
+            ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Address</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="address" #NameControl="ngModel"
+            ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Loan Type</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="loantype" #NameControl="ngModel"
+            ngModel required>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Income</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="income" #NameControl="ngModel"
+            ngModel required>
+        </div>
+        <div class="form-group">
+          <label for="name">Required Loan Amount</label>
+          <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="requiredLoanAmt" #NameControl="ngModel"
+            ngModel required>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="name">PAN Number</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="panNumber" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="name">Aadhar Number</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="aadharNumber" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="inputPhoneNumber">Contact</label>
+      <input type="number" class="form-control" pattern="[789][0-9]{9}" name="contactNumber" placeholder="PhoneNumber"
+        #ContactControl="ngModel" ngModel required>
+      <div *ngIf="ContactControl?.touched && ContactControl?.invalid" class="alert alert-danger">
+        <div *ngIf="ContactControl.errors?.required">
+          Contact is required
+        </div>
+        <div *ngIf="ContactControl.errors?.pattern">
+          Please enter a valid contact number
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"
+        #EmailControl="ngModel" ngModel required>
+      <div *ngIf="EmailControl?.touched && EmailControl?.invalid" class="alert alert-danger">
+        <div *ngIf="EmailControl.errors?.required">
+          Email is required
+        </div>
+        <div *ngIf="EmailControl.errors?.pattern">
+          Please enter a valid email
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Enquiry Date</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="enquiryDate" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="name">Date of Birth</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="dateOfBirth" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="name">City</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="city" #NameControl="ngModel" ngModel
+        required>
+    </div>
+    <div class="form-group">
+      <label for="name">Credit Limit</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="creditLimit" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="name">Last Update Credit Date</label>
+      <input type="text" class="form-control" pattern="[a-zA-Z][a-zA-Z ]+" name="lastUpdatedCreditDate" #NameControl="ngModel"
+        ngModel required>
+    </div>
+    <button type="submit" name="button" class="btn btn-success" [disabled]="prospectform.invalid">Add Prospect</button>
+    </form>
+  </div>
+  </div>
+  {{prospectform.value | json}}
+</body>
+
+
+
+</html>
