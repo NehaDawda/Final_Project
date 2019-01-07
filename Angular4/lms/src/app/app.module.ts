@@ -9,6 +9,8 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProspectDetailsComponent } from './components/prospect-details/prospect-details.component';
 import { ProspectListComponent } from './components/prospect-list/prospect-list.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes = [
   {path:'Home', component:HomeComponent},
@@ -30,8 +32,10 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
