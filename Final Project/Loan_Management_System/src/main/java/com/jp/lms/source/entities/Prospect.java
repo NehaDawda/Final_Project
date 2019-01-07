@@ -4,13 +4,18 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="LMS_PROSPECT")
 public class Prospect {
 	@Id
+	//@SequenceGenerator(name="PROSPECT_GEN", sequenceName="prospect_master_seq", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PROSPECT_ID")
 	private String prospectId;
 	
@@ -59,6 +64,9 @@ public class Prospect {
 	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditDate;
 	
+	@Column(name="PROSPECT_ASSET_ID")
+	private String prospectAssetId;
+		
 	public String getProspectId() {
 		return prospectId;
 	}
@@ -186,4 +194,13 @@ public class Prospect {
 	public void setLastUpdatedCreditDate(Date lastUpdatedCreditDate) {
 		this.lastUpdatedCreditDate = lastUpdatedCreditDate;
 	}
+
+	public String getProspectAssetId() {
+		return prospectAssetId;
+	}
+
+	public void setProspectAssetId(String prospectAssetId) {
+		this.prospectAssetId = prospectAssetId;
+	}
+	
 }

@@ -20,10 +20,11 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Propagation"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoProspect"/>
-<fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceProspect"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.entities.Prospect"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.exceptions.LmsException"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceProspect"/>
 </qualifiedTypeNameHistroy>
