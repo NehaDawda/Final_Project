@@ -33,6 +33,7 @@ export class RegistrationComponent implements OnInit {
       city:prospectform.value.city,
       creditLimit:prospectform.value.creditLimit,
       lastUpdatedCreditDate:prospectform.value.lastUpdatedCreditDate,
+      applicationStatus:"New"
     };
     this._prospectlistservice.addNewProspect(newprospect).subscribe(prospect => {this.NewProspect});
   }

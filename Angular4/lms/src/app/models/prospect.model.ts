@@ -15,4 +15,5 @@ export class Prospect {
     city:String;
     creditLimit:Number;
     lastUpdatedCreditDate:Date;
+    applicationStatus:String;
 }
