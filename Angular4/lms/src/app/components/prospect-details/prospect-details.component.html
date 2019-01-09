@@ -1,143 +1,49 @@
-<div class="panel panel-primary" *ngFor="let s of ProspectDetails">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{s.prospectId}}</h3>
-  </div>
-  <div class="panel-body">
-    <div class="col-xs-10">
-      <div class="row vertical-align">
+<html>
+<table>
+  <thead>
+    <tr *ngFor="let s of ProspectDetails">
+      <th>Prospect ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>Loan Type</th>
+      <th>Income</th>
+      <th>Required Loan Amount</th>
+      <th>PAN Number</th>
+      <th>Aadhar Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Enquiry Date</th>
+      <th>Date of Birth</th>
+      <th>City</th>
+      <th>Credit Limit</th>
+      <th>Last Update Credit Date</th>
+      <th>Prospect Asset ID</th>
+      <th>Application Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of prospectlist">
+      <th>{{p.prospectId}}</th>
+      <th>{{p.firstName}}</th>
+      <th>{{p.lastName}}</th>
+      <th>{{p.address}}</th>
+      <th>L{{p.loanType}}</th>
+      <th>{{p.income}}</th>
+      <th>{{p.requiredLoanAmt}}</th>
+      <th>{{p.panNumber}}</th>
+      <th>{{p.aadharNumber}}</th>
+      <th>{{p.contactNumber}}</th>
+      <th>{{p.email}}</th>
+      <th>{{p.enquiryDate}}</th>
+      <th>{{p.dateOfBirth}}</th>
+      <th>{{p.city}}</th>
+      <th>{{p.creditLimit}}</th>
+      <th>{{p.lastUpdatedCreditDate}}</th>
+      <th>{{p.prospectAssetId}}</th>
+      <th>{{p.applicationStatus}}</th>
+    </tr>
+  </tbody>
+</table>
 
-        <div class="col-xs-8">
-
-          <div class="row">
-            <div class="col-xs-6">
-              First Name
-            </div>
-            <div class="col-xs-6">
-              : {{s.firstName}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Last Name
-            </div>
-            <div class="col-xs-6">
-              : {{s.lastName}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Address
-            </div>
-            <div class="col-xs-6">
-              : {{s.address}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Loan Type
-            </div>
-            <div class="col-xs-6">
-              : {{s.loanType}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Income
-            </div>
-            <div class="col-xs-6">
-              : {{s.income}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Required Loan Amount
-            </div>
-            <div class="col-xs-6">
-              : {{s.requiredLoanAmt}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Pan Number
-            </div>
-            <div class="col-xs-6">
-              : {{s.panNumber}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Aadhar Number
-            </div>
-            <div class="col-xs-6">
-              : {{s.aadharNumber}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Contact Number
-            </div>
-            <div class="col-xs-6">
-              : {{s.contactNumber}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Email
-            </div>
-            <div class="col-xs-6">
-              : {{s.email}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Enquiry Date
-            </div>
-            <div class="col-xs-6">
-              : {{s.enquiryDate}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Date of Birth
-            </div>
-            <div class="col-xs-6">
-              : {{s.dateOfBirth}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              City
-            </div>
-            <div class="col-xs-6">
-              : {{s.city}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Credit Limit
-            </div>
-            <div class="col-xs-6">
-              : {{s.creditLimit}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Last Updated Credit Date
-            </div>
-            <div class="col-xs-6">
-              : {{s.lastUpdatedCreditDate}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              Application Status
-            </div>
-            <div class="col-xs-6">
-              : {{s.applicationStatus}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</html>

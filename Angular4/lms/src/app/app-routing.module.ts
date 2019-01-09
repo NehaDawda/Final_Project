@@ -10,11 +10,11 @@ import { ProspectDetailsComponent } from './components/prospect-details/prospect
 
 const appRoutes:Routes = [
   {path:'Home', component:HomeComponent},
-  {path: 'registration/:pid', component:RegistrationComponent},
+  {path: 'registration', component:RegistrationComponent},
   {path: 'login', component:LoginComponent},
   {path: 'logout', component:LogoutComponent},
   {path: 'prospectlist', component:ProspectListComponent},
-  {path: 'prospectdetails', component:ProspectDetailsComponent}
+  {path: 'prospectdetails/:prospectId', component:ProspectDetailsComponent}
   
 ]
 

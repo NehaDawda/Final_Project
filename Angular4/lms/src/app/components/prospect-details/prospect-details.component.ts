@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Prospect } from 'src/app/models/prospect.model';
 import { ProspectService } from 'src/app/services/prospect.service';
+import { JsondataService } from 'src/app/services/jsondata.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-prospect-details',
@@ -9,11 +11,15 @@ import { ProspectService } from 'src/app/services/prospect.service';
 })
 export class ProspectDetailsComponent implements OnInit {
   ProspectDetails : Prospect;
+  prospectId : String;
 
-  constructor(private _prospectDetailsService : ProspectService) { }
+  constructor(private _prospectDetailsService : ProspectService, private activatedRoute: ActivatedRoute) { }
+  
+
+ 
 
   ngOnInit() {
-    
+    this.prospectId = this.activatedRoute.snapshot.paramMap.get("prospectId")
   }
 
   getProspectDetails(prospectId){

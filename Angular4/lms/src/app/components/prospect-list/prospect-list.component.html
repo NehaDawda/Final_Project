@@ -1,23 +1,24 @@
 <html>
-  <table>
-    <thead>
-      <tr>
-          <th>Prospect ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Loan Type</th>
-          <th>Application Status</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let p of prospectlist">
-            <th><a >{{p.prospectId}}</a></th>
-            <th>{{p.firstName}}</th>
-            <th>{{p.lastName}}</th>
-            <th>{{p.loanType}}</th>
-            <th>{{p.applicationStatus}}</th>
-        </tr>
-    </tbody>
-  </table>  
+<table>
+  <thead>
+    <tr>
+      <th>Prospect ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Loan Type</th>
+      <th>Application Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of prospectlist">
+      <td>{{p.prospectId}}</td>
+      <td>{{p.firstName}}</td>
+      <td>{{p.lastName}}</td>
+      <td>{{p.loanType}}</td>
+      <td>{{p.applicationStatus}}</td>
+      <td><button (click)="getDetails(p.prospectId)">View Prospect Details</button></td>
+    </tr>
+  </tbody>
+</table>
 
 </html>
