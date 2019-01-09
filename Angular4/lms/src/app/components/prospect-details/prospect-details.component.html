@@ -1,3 +1,49 @@
-<p>
-  prospect-details works!
-</p>
+<html>
+<table>
+  <thead>
+    <tr *ngFor="let s of ProspectDetails">
+      <th>Prospect ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Address</th>
+      <th>Loan Type</th>
+      <th>Income</th>
+      <th>Required Loan Amount</th>
+      <th>PAN Number</th>
+      <th>Aadhar Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Enquiry Date</th>
+      <th>Date of Birth</th>
+      <th>City</th>
+      <th>Credit Limit</th>
+      <th>Last Update Credit Date</th>
+      <th>Prospect Asset ID</th>
+      <th>Application Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of prospectlist">
+      <th>{{p.prospectId}}</th>
+      <th>{{p.firstName}}</th>
+      <th>{{p.lastName}}</th>
+      <th>{{p.address}}</th>
+      <th>L{{p.loanType}}</th>
+      <th>{{p.income}}</th>
+      <th>{{p.requiredLoanAmt}}</th>
+      <th>{{p.panNumber}}</th>
+      <th>{{p.aadharNumber}}</th>
+      <th>{{p.contactNumber}}</th>
+      <th>{{p.email}}</th>
+      <th>{{p.enquiryDate}}</th>
+      <th>{{p.dateOfBirth}}</th>
+      <th>{{p.city}}</th>
+      <th>{{p.creditLimit}}</th>
+      <th>{{p.lastUpdatedCreditDate}}</th>
+      <th>{{p.prospectAssetId}}</th>
+      <th>{{p.applicationStatus}}</th>
+    </tr>
+  </tbody>
+</table>
+
+</html>

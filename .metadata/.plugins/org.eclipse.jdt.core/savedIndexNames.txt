@@ -50,7 +50,6 @@ INDEX VERSION 1.129+C:\Users\Administrator\Documents\GitHub\Final_Project\.metad
 3541390006.index
 1560477208.index
 3910416300.index
-3189388444.index
 951022815.index
 1413329338.index
 2559030460.index
@@ -73,7 +72,6 @@ INDEX VERSION 1.129+C:\Users\Administrator\Documents\GitHub\Final_Project\.metad
 518545357.index
 2147273168.index
 1281784259.index
-2349606479.index
 177905786.index
 1153175701.index
 1952388078.index
