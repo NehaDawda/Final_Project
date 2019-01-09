@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,23 +25,28 @@ import com.jp.lms.source.services.ServiceProspect;
  * 
  * Multi-action controllers.
  * 
- * http://localhost:8080/Loan_Management_System/prospectList
- * http://localhost:8080/Loan_Management_System/prospectDetails
- * http://localhost:8080/Loan_Management_System/register
+ * http://localhost:8082/prospects
+ * http://localhost:8082/Loan_Management_System/prospectDetails
+ * http://localhost:8082/Loan_Management_System/register
  * 
  */
+//@CrossOrigin(origins = "*", allowedHeaders = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
+@RequestMapping("/prospects")
 public class ProspectController {
 	@Autowired
 	@Qualifier("service")
-	private ServiceProspect prospectService;
+	private ServiceProspect serviceProspect;
 	
-	@CrossOrigin(origins= "http://localhost:4200")
-	@RequestMapping(value = "/prospectList",method = RequestMethod.GET,produces="application/json")
+	
+	//@RequestMapping(value = "",method = RequestMethod.GET,produces="application/json")
+	@GetMapping(value="",produces="application/json")
 	public List<Prospect> getProspectList(){
+		System.out.println("In controller");
 		List<Prospect> prospectList = null;
 		try {
-			prospectList = prospectService.getProspectList();
+			prospectList = serviceProspect.getProspectList();
+			System.out.println("getAllPropects controller  ...."+prospectList);
 			
 		} catch (LmsException e) {
 			e.printStackTrace();
@@ -48,12 +54,11 @@ public class ProspectController {
 		return prospectList;
 	}
 	
-	@CrossOrigin(origins= "http://localhost:4200")
-	@RequestMapping(value="/prospectDetails",method = RequestMethod.GET,produces="application/json")
+	/*@RequestMapping(value="/prospectDetails",method = RequestMethod.GET,produces="application/json")
 	public Prospect getProspectDetails(@RequestBody String prospectId){
 		Prospect prospect = null;
 		try {
-			prospect = prospectService.getProspectDetails(prospectId);
+			prospect = serviceProspect.getProspectDetails(prospectId);
 		} catch (LmsException e) {
 			e.printStackTrace();
 		}
@@ -62,18 +67,17 @@ public class ProspectController {
 	
 	@RequestMapping(value="/updateprospectDetails",method = RequestMethod.GET,headers="Accept=application/json")
 	public String updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
-		return prospectService.updateProspect(prospect);
+		return serviceProspect.updateProspect(prospect);
 	}
 	
 	@RequestMapping(value="/updateprospectDetails",method = RequestMethod.GET,headers="Accept=application/json")
 	public String removeProspectDetails(@RequestBody String prospectId) throws LmsException{
-		return prospectService.removeProspect(prospectId);
+		return serviceProspect.removeProspect(prospectId);
 	}
 	
-	@CrossOrigin(origins= "http://localhost:4200")
 	@RequestMapping(value="/register",method = RequestMethod.POST,consumes="application/json")
 	public String submitRegistrationForm(@RequestBody Prospect prospect ) throws LmsException{
 		//Prospect prospect = new Prospect();
-    	return prospectService.registerProspect(prospect);
-	}
+    	return serviceProspect.registerProspect(prospect);
+	}*/
 }

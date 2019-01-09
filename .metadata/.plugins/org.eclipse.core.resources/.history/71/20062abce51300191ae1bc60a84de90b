@@ -1,0 +1,8 @@
+package com.jp.lms.source.services;
+
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+public interface ServiceNewLoanAppl {
+	public String registerNewApplication(Prospect prospect) throws LmsException;
+}

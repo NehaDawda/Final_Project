@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.PersistenceContext;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,15 +17,14 @@ import com.jp.lms.source.exceptions.LmsException;
 @Service("service")
 public class ServiceProspectImpl implements ServiceProspect {
 	
-	@PersistenceContext
-	private DaoProspect daoProspect;
-	
-	public ServiceProspectImpl(@Qualifier("daoDS") DaoProspect daoProspect) throws LmsException{
-		this.daoProspect = daoProspect;
-	}
+	@Autowired
+	@Qualifier("daoDS") 
+	private DaoProspect daoProspect;	
 	
 	@Override
 	public List<Prospect> getProspectList() throws LmsException {
+
+		System.out.println("getAllPropects service ....");
 		return daoProspect.getAllPropects();
 	}
 

@@ -1,0 +1,151 @@
+package com.jp.lms.source.controllers;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jp.lms.source.entities.Property;
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+import com.jp.lms.source.services.ServiceProperty;
+import com.jp.lms.source.services.ServiceProspect;
+
+//import com.jp.lms.source.services.ServiceProspect;
+
+
+
+/*
+ * @Controller: A kind of @Component to declare SpringMVC controllers.
+ * @RequestMapping: To map a controlling method to the URL.
+ * @RequestParam: To take single QueryString or FormData field value.
+ * 
+ * Multi-action controllers.
+ * 
+ * http://localhost:8082/prospects/list
+ * http://localhost:8082/Loan_Management_System/prospectDetails
+ * http://localhost:8082/Loan_Management_System/register
+ * 
+ */
+@CrossOrigin(origins = "*", allowedHeaders = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@RestController
+//@RequestMapping("/prospects")
+public class ProspectController {
+	@Autowired
+	@Qualifier("service")
+	private ServiceProspect serviceProspect;
+	
+	@Autowired
+	@Qualifier("serviceProperty")
+	private ServiceProperty serviceProperty;
+	
+	//@RequestMapping(value = "",method = RequestMethod.GET,produces="application/json")
+	@GetMapping(value="/prospects/list",produces="application/json")
+	public List<Prospect> getProspectList(){
+		System.out.println("In the method.");
+		List<Prospect> prospectList = new ArrayList<>();
+		prospectList.add(new Prospect());
+		try {
+			prospectList = serviceProspect.getProspectList();
+		} catch (LmsException e) {
+			e.printStackTrace();
+		}
+		return prospectList;
+	}
+	
+	@GetMapping(value="/prospectDetails",produces="application/json")
+	public Prospect getProspectDetails(@RequestBody String prospectId){
+		Prospect prospect = null;
+		try {
+			prospect = serviceProspect.getProspectDetails(prospectId);
+		} catch (LmsException e) {
+			e.printStackTrace();
+		}
+		return prospect;
+	}
+	
+	@GetMapping(value="/prospects/status",produces="application/json")
+	public List<Prospect> getProspectsByStatus(@RequestBody String status){
+		List<Prospect> prospectList = null;
+		try {
+			prospectList = serviceProspect.getProspectsByStatus(status);
+		} catch (LmsException e) {
+			e.printStackTrace();
+		}
+		return prospectList;
+	}
+	
+	@PutMapping(value="/updateProspect",consumes="application/json")
+	public String updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
+		return serviceProspect.updateProspect(prospect);
+	}
+	
+	/*@RequestMapping(value="/updateprospectDetails",method = RequestMethod.GET,headers="Accept=application/json")
+	public String removeProspectDetails(@RequestBody String prospectId) throws LmsException{
+		return serviceProspect.removeProspect(prospectId);
+	}*/
+	
+	@PostMapping(value="/register",consumes="application/json")
+	public String submitLoanApplicationForm(@RequestBody Prospect prospect) throws LmsException{
+		return serviceProspect.registerProspect(prospect);
+	}
+	
+	@PostMapping(value="/register1",consumes="application/json")
+	public String submitLoanApplicationForm1(@RequestBody Map<String, Object> json) throws LmsException, ParseException{
+		System.out.println(json);
+		
+		Property property = new Property();
+		
+		property.setApartmentNo(json.get("apartmentNo").toString());
+		property.setApartmentName(json.get("apartmentName").toString());
+		property.setStreetName(json.get("streetName").toString());
+		property.setLocality(json.get("locality").toString());
+		property.setLandmark(json.get("landmark").toString());
+		property.setCity(json.get("city").toString());
+		property.setState(json.get("state").toString());
+		property.setCountry(json.get("country").toString());
+		property.setZipCode(json.get("zipCode").toString());
+		property.setPurchasedPrice(Double.valueOf(json.get("purchasedPrice").toString()));
+		
+		System.out.println(property);
+		property.setPropertyId("Pro111");
+		System.out.println(property);
+		
+		
+		String propertyId = serviceProperty.registerProperty(property);
+		
+		Prospect prospect = new Prospect();
+		prospect.setProspectId("P111");
+		prospect.setFirstName(json.get("firstName").toString());
+		prospect.setLastName(json.get("lastName").toString());
+		prospect.setAddress(json.get("address").toString());
+		prospect.setLoanType(json.get("loanType").toString());
+		prospect.setIncome(Double.valueOf(json.get("income").toString()));
+		prospect.setRequiredLoanAmt(Double.valueOf(json.get("requiredLoanAmt").toString()));
+		prospect.setPanNumber(json.get("panNumber").toString());
+		prospect.setAadharNumber(json.get("aadharNumber").toString());
+		prospect.setContactNumber(json.get("contactNumber").toString());
+		prospect.setEmail(json.get("email").toString());
+		prospect.setEnquiryDate(new SimpleDateFormat("dd/mm/yyyy").parse(json.get("enquiryDate").toString()));
+		prospect.setDateOfBirth(new SimpleDateFormat("dd/mm/yyyy").parse(json.get("dateOfBirth").toString()));
+		prospect.setCity(json.get("city").toString());
+		prospect.setProspectAssetId(propertyId);
+		prospect.setApplicationStatus(json.get("applicationStatus").toString());
+		
+		//prospect.setProspectAssetId(propertyId);
+    	return serviceProspect.registerProspect(prospect);
+	}
+}

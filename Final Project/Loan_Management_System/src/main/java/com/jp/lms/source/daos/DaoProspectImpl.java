@@ -28,10 +28,10 @@ public class DaoProspectImpl implements DaoProspect {
 
 	@Override
 	public List<Prospect> getAllPropects() throws LmsException {
-		String sql = "SELECT e FROM empRec e";
+		String sql = "SELECT e FROM Prospect e";
 		Query qry = entityManager.createQuery(sql);
 		List<Prospect> prospectList = qry.getResultList() ;
-		
+		System.out.println("getAllPropects dao ...."+prospectList);
 		return prospectList;
 	}
 

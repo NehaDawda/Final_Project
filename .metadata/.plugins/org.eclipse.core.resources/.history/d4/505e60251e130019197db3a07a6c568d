@@ -1,0 +1,15 @@
+server.port=8082
+
+# Database Configuration
+#spring.datasource.url=jdbc:oracle:thin:@192.168.1.6:1521:ORCL
+#spring.datasource.username=hr
+#spring.datasource.password=hr
+
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.username=scott
+spring.datasource.password=lion
+
+#spring.jpa.hibernate.ddl-auto=create-drop
+
+# JPA Configuration
+spring.jpa.show-sql=true

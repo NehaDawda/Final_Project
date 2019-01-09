@@ -67,6 +67,9 @@ public class Prospect {
 	@Column(name="PROSPECT_ASSET_ID")
 	private String prospectAssetId;
 		
+	@Column(name="APPLICATION_STATUS")
+	private String applicationStatus;
+	
 	public String getProspectId() {
 		return prospectId;
 	}
@@ -202,5 +205,12 @@ public class Prospect {
 	public void setProspectAssetId(String prospectAssetId) {
 		this.prospectAssetId = prospectAssetId;
 	}
-	
+
+	public String getApplicationStatus() {
+		return applicationStatus;
+	}
+
+	public void setApplicationStatus(String applicationStatus) {
+		this.applicationStatus = applicationStatus;
+	}
 }
