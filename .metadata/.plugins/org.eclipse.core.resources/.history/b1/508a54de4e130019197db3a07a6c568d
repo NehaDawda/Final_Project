@@ -1,0 +1,27 @@
+package com.jp.lms.source.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jp.lms.source.daos.DaoProspect;
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+@Service("service")
+public class ServicePropertyImpl implements ServiceProperty {
+	
+	@Autowired
+	@Qualifier("daoDS") 
+	private DaoProspect daoProspect;	
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
+	public String registerProspect(Prospect prospect) throws LmsException {
+		return daoProspect.addProspect(prospect);
+	}
+
+	
+}

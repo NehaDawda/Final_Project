@@ -1,0 +1,40 @@
+package com.jp.lms.source.daos;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jp.lms.source.entities.BankEmployee;
+import com.jp.lms.source.entities.Property;
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+@Repository("daoEmp")
+public class DaoBankEmpImpl implements DaoBankEmp {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Override
+	public boolean hasManagerRole(String empId) throws LmsException {
+		TypedQuery<BankEmployee> query = entityManager.createQuery("SELECT emp from BankEmployee emp where emp.empType = 'MANAGER' and emp.empId = :empId", BankEmployee.class);
+		query.setParameter("app_status", status);
+		List<Prospect> prospectList = query.getResultList() ;
+		return false;
+	}
+
+	@Override
+	public boolean validateUser(String empId, String password) throws LmsException {
+		
+		return false;
+	}
+
+	
+	
+}

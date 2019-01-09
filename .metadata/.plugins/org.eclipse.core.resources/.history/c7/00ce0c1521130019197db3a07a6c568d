@@ -1,0 +1,40 @@
+package com.jp.lms.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jp.lms.entities.Prospect;
+import com.jp.lms.exceptions.LmsException;
+import com.jp.lms.services.ServiceProspect;
+
+/*
+ * 
+ * Multi-action controllers.
+ * 
+ * http://localhost:8082/prospects/list
+ * 
+ */
+@RestController
+public class ProspectController {
+	@Autowired
+	private ServiceProspect serviceProspect;
+	
+	@GetMapping(value="prospects/list",produces="application/json")
+	public List<Prospect> getProspectList(){
+		System.out.println("In controller");
+		List<Prospect> prospectList = null;
+		try {
+			prospectList = serviceProspect.getProspectList();
+			System.out.println("getAllPropects controller  ...."+prospectList);
+			
+		} catch (LmsException e) {
+			e.printStackTrace();
+		}
+		return prospectList;
+	}
+}

@@ -1,0 +1,8 @@
+package com.jp.lms.source.daos;
+
+import com.jp.lms.source.entities.Property;
+import com.jp.lms.source.exceptions.LmsException;
+
+public interface DaoProspect {
+	public String addProspect(Property property) throws LmsException;
+}

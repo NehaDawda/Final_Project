@@ -1,0 +1,11 @@
+package com.jp.lms.source.start;
+/** @author Smita **/
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+public class ServletInitializer extends SpringBootServletInitializer {
+   @Override
+   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+       return application.sources(ApplStart.class);
+       //return application.sources(JavaApplication.class);//for stand-alone java application
+   }
+}

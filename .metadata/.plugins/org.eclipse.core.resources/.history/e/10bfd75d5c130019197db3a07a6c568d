@@ -1,0 +1,25 @@
+package com.jp.lms.source.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jp.lms.source.daos.DaoBankEmp;
+import com.jp.lms.source.daos.DaoProspect;
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+@Service("serviceEmp")
+public class ServiceBankEmpImpl implements ServiceBankEmp {
+	
+	@Autowired
+	@Qualifier("daoEmp") 
+	private DaoBankEmp daoBankEmp;	
+	
+	
+
+}
