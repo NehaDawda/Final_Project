@@ -7,9 +7,12 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -17,19 +20,18 @@ import javax.persistence.Table;
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="LOAN_TYPE",discriminatorType=DiscriminatorType.STRING)
 @DiscriminatorValue(value="LOAN")
-public class Loan {
+public abstract class Loan {
 	@Id
+	@SequenceGenerator(name="LOAN_SEQ", sequenceName="LMS_LOAN_SEQ", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="LOAN_SEQ")
 	@Column(name="LOAN_ACC_NUMBER")
-	private Integer loanAccNumber;
+	private Long loanAccNumber;
 	
 	@Column(name="LOAN_AMOUNT")
 	private Double loanAmount;
 	
 	@Column(name="CUSTOMER_ID")
-	private String customerId;
-	
-	@Column(name="LOAN_TYPE")
-	private String loanType;
+	private Long customerId;
 	
 	@Column(name="LOAN_APPROVE_DATE")
 	private Date loanApproveDate;
@@ -55,11 +57,11 @@ public class Loan {
 	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditLimit;
 	
-	public Integer getLoanAccNumber() {
+	public Long getLoanAccNumber() {
 		return loanAccNumber;
 	}
 	
-	public void setLoanAccNumber(Integer loanAccNumber) {
+	public void setLoanAccNumber(Long loanAccNumber) {
 		this.loanAccNumber = loanAccNumber;
 	}
 	
@@ -71,20 +73,12 @@ public class Loan {
 		this.loanAmount = loanAmount;
 	}
 	
-	public String getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
 	
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
-	}
-	
-	public String getLoanType() {
-		return loanType;
-	}
-	
-	public void setLoanType(String loanType) {
-		this.loanType = loanType;
 	}
 	
 	public Date getLoanApproveDate() {

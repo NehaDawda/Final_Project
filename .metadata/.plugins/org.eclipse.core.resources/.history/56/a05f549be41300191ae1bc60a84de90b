@@ -1,0 +1,10 @@
+package com.jp.lms.source.services;
+
+import java.util.List;
+
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+
+public interface ServiceProspect2 {
+	public String approveProspectLoan(Prospect prospect) throws LmsException;
+	

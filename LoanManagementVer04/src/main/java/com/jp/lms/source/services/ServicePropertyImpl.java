@@ -19,7 +19,7 @@ public class ServicePropertyImpl implements ServiceProperty {
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
-	public String registerProperty(Property property) throws LmsException {
+	public Long registerProperty(Property property) throws LmsException {
 		return daoProperty.addProperty(property);
 	}
 

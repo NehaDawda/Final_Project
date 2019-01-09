@@ -2,7 +2,10 @@ package com.jp.lms.source.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,8 +13,10 @@ import javax.persistence.Table;
 public class Property {
 	
 	@Id
+	@SequenceGenerator(name="PROPERTY_SEQ", sequenceName="LMS_PROPERTY_SEQ", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="PROPERTY_SEQ")
 	@Column(name="PROPERTY_ID")
-	private String propertyId;
+	private Long propertyId;
 	
 	@Column(name="APARTMENT_NUMBER")
 	private String apartmentNo;
@@ -43,11 +48,11 @@ public class Property {
 	@Column(name="PURCHASE_PRICE")
 	private Double purchasedPrice;
 	
-	public String getPropertyId() {
+	public Long getPropertyId() {
 		return propertyId;
 	}
 	
-	public void setPropertyId(String propertyId) {
+	public void setPropertyId(Long propertyId) {
 		this.propertyId = propertyId;
 	}
 	
@@ -130,4 +135,14 @@ public class Property {
 	public void setPurchasedPrice(Double purchasedPrice) {
 		this.purchasedPrice = purchasedPrice;
 	}
+
+	@Override
+	public String toString() {
+		return "Property [propertyId=" + propertyId + ", apartmentNo=" + apartmentNo + ", apartmentName="
+				+ apartmentName + ", streetName=" + streetName + ", locality=" + locality + ", landmark=" + landmark
+				+ ", city=" + city + ", state=" + state + ", country=" + country + ", zipCode=" + zipCode
+				+ ", purchasedPrice=" + purchasedPrice + "]";
+	}
+	
+	
 }

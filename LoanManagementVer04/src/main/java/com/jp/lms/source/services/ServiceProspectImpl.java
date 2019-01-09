@@ -17,7 +17,7 @@ public class ServiceProspectImpl implements ServiceProspect {
 	
 	@Autowired
 	@Qualifier("daoDS") 
-	private DaoProspect daoProspect;	
+	private DaoProspect daoProspect;
 	
 	@Override
 	public List<Prospect> getProspectList() throws LmsException {
@@ -25,7 +25,7 @@ public class ServiceProspectImpl implements ServiceProspect {
 	}
 
 	@Override
-	public Prospect getProspectDetails(String prospectId) throws LmsException {
+	public Prospect getProspectDetails(Long prospectId) throws LmsException {
 		return daoProspect.getProspectDetails(prospectId);
 	}
 
@@ -37,20 +37,13 @@ public class ServiceProspectImpl implements ServiceProspect {
 	
 	@Override
 	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
-	public String registerProspect(Prospect prospect) throws LmsException {
+	public Long registerProspect(Prospect prospect) throws LmsException {
 		return daoProspect.addProspect(prospect);
 	}
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
-	public String updateProspect(Prospect prospect) throws LmsException {
+	public Long updateProspect(Prospect prospect) throws LmsException {
 		return daoProspect.updateProspect(prospect);
 	}
-
-	/*@Override
-	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
-	public String removeProspect(String prospectId) throws LmsException {
-		return daoProspect.removeProspect(prospectId);
-	}*/
-
 }

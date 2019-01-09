@@ -9,16 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name="LMS_PROSPECT")
 public class Prospect {
 	@Id
-	//@SequenceGenerator(name="PROSPECT_GEN", sequenceName="prospect_master_seq", allocationSize=1)
-	//@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="PROSPECT_SEQ", sequenceName="LMS_PROSPECT_SEQ", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="PROSPECT_SEQ")
 	@Column(name="PROSPECT_ID")
-	private String prospectId;
+	private Long prospectId;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -65,18 +64,17 @@ public class Prospect {
 	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditDate;
 	
-	//@Transient
 	@Column(name="PROSPECT_ASSET_ID")
-	private String prospectAssetId;
+	private Long prospectAssetId;
 	
 	@Column(name="APPLICATION_STATUS")
 	private String applicationStatus;
 	
-	public String getProspectId() {
+	public Long getProspectId() {
 		return prospectId;
 	}
 	
-	public void setProspectId(String prospectId) {
+	public void setProspectId(Long prospectId) {
 		this.prospectId = prospectId;
 	}
 	
@@ -200,11 +198,11 @@ public class Prospect {
 		this.lastUpdatedCreditDate = lastUpdatedCreditDate;
 	}
 
-	public String getProspectAssetId() {
+	public Long getProspectAssetId() {
 		return prospectAssetId;
 	}
 
-	public void setProspectAssetId(String prospectAssetId) {
+	public void setProspectAssetId(Long prospectAssetId) {
 		this.prospectAssetId = prospectAssetId;
 	}
 

@@ -1,0 +1,21 @@
+package com.jp.lms.source.entities;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+
+@Entity
+@DiscriminatorValue(value="HOME LOAN")
+public class HomeLoan extends Loan {
+	
+	@JoinColumn(name="CUSTOMER_ASSET_ID")
+	private String propertyId;
+
+	public String getProperty() {
+		return propertyId;
+	}
+
+	public void setProperty(String propertyId) {
+		this.propertyId = propertyId;
+	}
+}

@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +15,10 @@ import javax.persistence.Table;
 public class Customer {
 	
 	@Id
+	@SequenceGenerator(name="CUSTOMER_SEQ", sequenceName="LMS_CUSTOMER_SEQ", allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="CUSTOMER_SEQ")
 	@Column(name="CUSTOMER_ID")
-	private String customerId;
+	private Long customerId;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -31,7 +36,7 @@ public class Customer {
 	private String aadharNumber;
 	
 	@Column(name="CONTACT_NUMBER")
-	private Integer contactNumber;
+	private String contactNumber;
 	
 	@Column(name="EMAIL")
 	private String email;
@@ -45,11 +50,11 @@ public class Customer {
 	@Column(name="LAST_UPDATED_CREDIT_DATE")
 	private Date lastUpdatedCreditDate;
 	
-	public String getCustomerId() {
+	public Long getCustomerId() {
 		return customerId;
 	}
 	
-	public void setCustomerId(String customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
 	
@@ -93,11 +98,11 @@ public class Customer {
 		this.aadharNumber = aadharNumber;
 	}
 	
-	public Integer getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
 	
-	public void setContactNumber(Integer contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 	

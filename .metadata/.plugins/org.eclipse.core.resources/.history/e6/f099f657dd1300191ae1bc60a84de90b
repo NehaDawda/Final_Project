@@ -1,0 +1,52 @@
+package com.jp.lms.source.daos;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jp.lms.source.entities.Customer;
+import com.jp.lms.source.entities.HomeLoan;
+import com.jp.lms.source.exceptions.LmsException;
+
+@Repository("daoCust")
+public class DaoHomeLoanImpl implements DaoHomeLoan {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public Integer createHomeLoan(HomeLoan homeLoan) {
+		entityManager.persist(homeLoan);
+		return homeLoan.getLoanAccNumber();
+	}
+
+	@Override
+	public List<HomeLoan> getAllHomeLoans() throws LmsException {
+		String sql = "SELECT hl FROM HomeLoan hl";
+		Query qry = entityManager.createQuery(sql);
+		List<HomeLoan> homeLoanList = qry.getResultList() ;
+		return homeLoanList;
+	}
+
+	@Override
+	public HomeLoan getHomeLoanDetails(Integer loanAccNumber) throws LmsException {
+		HomeLoan homeLoan = entityManager.find(HomeLoan.class, loanAccNumber);
+		return homeLoan;
+	}
+
+	
+	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
+	public String updateCustomer(Customer customer) throws LmsException {
+		entityManager.merge(customer);
+		return customer.getCustomerId();
+	}
+
+}

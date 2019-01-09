@@ -19,9 +19,4 @@ public class ServiceBankEmpImpl implements ServiceBankEmp {
 	public BankEmployee validateUser(String empId, String password) throws LmsException {
 		return daoBankEmp.validateUser(empId, password);
 	}
-
-	
-	
-	
-
 }

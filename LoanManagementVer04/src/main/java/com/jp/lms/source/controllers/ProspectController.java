@@ -1,7 +1,11 @@
 package com.jp.lms.source.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jp.lms.source.entities.Property;
 import com.jp.lms.source.entities.Prospect;
 import com.jp.lms.source.exceptions.LmsException;
+import com.jp.lms.source.services.ServiceApproveLoan;
+import com.jp.lms.source.services.ServiceNewLoanAppl;
 import com.jp.lms.source.services.ServiceProperty;
 import com.jp.lms.source.services.ServiceProspect;
 
@@ -45,15 +51,17 @@ public class ProspectController {
 	private ServiceProspect serviceProspect;
 	
 	@Autowired
-	@Qualifier("serviceProperty")
-	private ServiceProperty serviceProperty;
+	@Qualifier("serviceNewLoanAppl")
+	private ServiceNewLoanAppl serviceNewLoanAppl;
 	
-	//@RequestMapping(value = "",method = RequestMethod.GET,produces="application/json")
+	@Autowired
+	@Qualifier("serviceApproveLoan")
+	private ServiceApproveLoan serviceApproveLoan;
+	
 	@GetMapping(value="/prospects/list",produces="application/json")
 	public List<Prospect> getProspectList(){
 		System.out.println("In the method.");
 		List<Prospect> prospectList = new ArrayList<>();
-		prospectList.add(new Prospect());
 		try {
 			prospectList = serviceProspect.getProspectList();
 		} catch (LmsException e) {
@@ -66,7 +74,7 @@ public class ProspectController {
 	public Prospect getProspectDetails(@RequestBody String prospectId){
 		Prospect prospect = null;
 		try {
-			prospect = serviceProspect.getProspectDetails(prospectId);
+			prospect = serviceProspect.getProspectDetails(Long.valueOf(prospectId));
 		} catch (LmsException e) {
 			e.printStackTrace();
 		}
@@ -85,24 +93,51 @@ public class ProspectController {
 	}
 	
 	@PutMapping(value="/updateProspect",consumes="application/json")
-	public String updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
+	public Long updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
 		return serviceProspect.updateProspect(prospect);
 	}
 	
-	/*@RequestMapping(value="/updateprospectDetails",method = RequestMethod.GET,headers="Accept=application/json")
-	public String removeProspectDetails(@RequestBody String prospectId) throws LmsException{
-		return serviceProspect.removeProspect(prospectId);
-	}*/
-	
-	@PostMapping(value="/register",consumes="application/json")
-	public String submitRegistrationForm(@RequestBody Prospect prospect) throws LmsException{
-		return serviceProspect.registerProspect(prospect);
+	@PostMapping(value="/loan/register",consumes="application/json")
+	public Long submitLoanApplicationForm(@RequestBody Map<String, Map<String,Object>> json) throws LmsException, ParseException{
+		System.out.println(json);
+		Map<String,Object> prospectJson = json.get("newprospect");
+		Map<String,Object> propertyJson = json.get("newproperty");
+		
+		Property property = new Property();
+		
+		property.setApartmentNo(propertyJson.get("apartmentNo").toString());
+		property.setApartmentName(propertyJson.get("apartmentName").toString());
+		property.setStreetName(propertyJson.get("streetName").toString());
+		property.setLocality(propertyJson.get("locality").toString());
+		property.setLandmark(propertyJson.get("landmark").toString());
+		property.setCity(propertyJson.get("city").toString());
+		property.setState(propertyJson.get("state").toString());
+		property.setCountry(propertyJson.get("country").toString());
+		property.setZipCode(propertyJson.get("zipCode").toString());
+		property.setPurchasedPrice(Double.valueOf(propertyJson.get("purchasedPrice").toString()));
+		
+		Prospect prospect = new Prospect();
+
+		prospect.setFirstName(prospectJson.get("firstName").toString());
+		prospect.setLastName(prospectJson.get("lastName").toString());
+		prospect.setAddress(prospectJson.get("address").toString());
+		prospect.setLoanType(prospectJson.get("loanType").toString());
+		prospect.setIncome(Double.valueOf(prospectJson.get("income").toString()));
+		prospect.setRequiredLoanAmt(Double.valueOf(prospectJson.get("requiredLoanAmt").toString()));
+		prospect.setPanNumber(prospectJson.get("panNumber").toString());
+		prospect.setAadharNumber(prospectJson.get("aadharNumber").toString());
+		prospect.setContactNumber(prospectJson.get("contactNumber").toString());
+		prospect.setEmail(prospectJson.get("email").toString());
+		prospect.setEnquiryDate(new Date());
+		prospect.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse(prospectJson.get("dateOfBirth").toString()));
+		prospect.setCity(prospectJson.get("city").toString());
+		prospect.setApplicationStatus(prospectJson.get("applicationStatus").toString());
+		
+		return serviceNewLoanAppl.registerNewHomeLoanAppl(prospect,property);
 	}
 	
-	@PostMapping(value="/register1",consumes="application/json")
-	public String submitRegistrationForm1(@RequestBody Prospect prospect, @RequestBody Property property) throws LmsException{
-		String propertyId = serviceProperty.registerProperty(property);
-		prospect.setProspectAssetId(propertyId);
-    	return serviceProspect.registerProspect(prospect);
+	@PostMapping(value="/loan/approve",consumes="application/json")
+	public String approveLoanApplication(@RequestBody Prospect prospect) throws LmsException{
+		return serviceApproveLoan.approveProspectLoan(prospect);
 	}
 }

@@ -23,7 +23,7 @@ public class DaoProspectImpl implements DaoProspect {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public String addProspect(Prospect prospect) {
+	public Long addProspect(Prospect prospect) {
 		prospect.setEnquiryDate(new Date());
 		entityManager.persist(prospect);
 		return prospect.getProspectId();
@@ -38,7 +38,7 @@ public class DaoProspectImpl implements DaoProspect {
 	}
 
 	@Override
-	public Prospect getProspectDetails(String prospectId) throws LmsException {
+	public Prospect getProspectDetails(Long prospectId) throws LmsException {
 		Prospect prospect = entityManager.find(Prospect.class, prospectId);
 		return prospect;
 	}
@@ -60,7 +60,7 @@ public class DaoProspectImpl implements DaoProspect {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public String updateProspect(Prospect prospect) throws LmsException {
+	public Long updateProspect(Prospect prospect) throws LmsException {
 		entityManager.merge(prospect);
 		return prospect.getProspectId();
 	}
