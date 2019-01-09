@@ -1,10 +1,9 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=a40f078d990860b446fe3e9f8b77781b7b2da9d7
 PROBLEMS_FILTERS_MIGRATE=true
 TASKS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
-<<<<<<< HEAD
 platformState=1538832563358
-=======
-platformState=1538832563286
->>>>>>> a40f078d990860b446fe3e9f8b77781b7b2da9d7
 quickStart=false
 tipsAndTricks=true

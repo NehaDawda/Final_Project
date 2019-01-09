@@ -8,8 +8,8 @@ import { Prospect } from '../models/prospect.model';
 export class JsondataService {
 
   constructor(private http: HttpClient) { }
-  getProspects() {
-    return this.http.get('http://localhost:4530/prospects');
+  getProspectCreditInfo(panNumber:String) {
+    return this.http.get('http://localhost:3001/credit_info/'+panNumber);
   }
 
   getProspectDetails(prospectId){

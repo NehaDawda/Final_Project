@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProspectService } from 'src/app/services/prospect.service';
 import { Prospect } from 'src/app/models/prospect.model';
+import { CreditLimitDetails } from 'src/app/models/credit-limit-details.model';
 import { JsondataService } from 'src/app/services/jsondata.service';
 import { Router } from '@angular/router';
 
@@ -10,56 +11,53 @@ import { Router } from '@angular/router';
   styleUrls: ['./prospect-list.component.css']
 })
 export class ProspectListComponent implements OnInit {
-  prospectlist : Prospect[];
-  toggleForm : boolean=false;
-  view_prospect_detail : Prospect;
+  prospectlist: Prospect[];
+  toggleProspectDetails: boolean = false;
+  prospect_detail: Prospect;
+  curr_prospect_credit_info: CreditLimitDetails;
 
 
-  constructor(private router: Router, private _prospectlistservice : ProspectService) { }
-  
+  constructor(private router: Router, private _prospectlistservice: ProspectService,
+    private _jsonDataservice: JsondataService) { }
 
- //constructor(private _prospectlistservice : JsondataService) { }
+
+  //constructor(private _prospectlistservice : JsondataService) { }
 
   ngOnInit() {
-    this._prospectlistservice.getProspects().subscribe(prospectList => {this.prospectlist =  prospectList});
+    this._prospectlistservice.getProspects().subscribe(prospectList => { this.prospectlist = prospectList });
   }
 
-  
-
-  showProspectDetails(i){
-    this.view_prospect_detail = i;
-    this.toggleForm = true;
+  showProspectDetails(prospectId: Number) {
+    this._prospectlistservice.getProspectDetails(prospectId).subscribe(prospect_detail => { this.prospect_detail = prospect_detail })
+    this.toggleProspectDetails = true;
   }
 
-  
+  showProspectList() {
+    this.toggleProspectDetails = false;
+  }
 
-  getDetails(prospectdetailsform){
-    let prospect_details : Prospect ={
-    prospectId : this.view_prospect_detail.prospectId,
-    firstName : prospectdetailsform.prospectFName,
-    lastName : prospectdetailsform.prospectLName,
-    address : prospectdetailsform.address,
-    loanType : prospectdetailsform.loanType,
-    income : prospectdetailsform.income,
-    requiredLoanAmt : prospectdetailsform.requiredLoanAmt,
-    panNumber : prospectdetailsform.panNumber,
-    aadharNumber : prospectdetailsform.aadharNumber,
-    contactNumber : prospectdetailsform.contactNumber,
-    email : prospectdetailsform.email,
-    enquiryDate : prospectdetailsform.enquiryDate,
-    dateOfBirth : prospectdetailsform.dateOfBirth,
-    city : prospectdetailsform.city,
-    creditLimit : prospectdetailsform.creditLimit,
-    lastUpdatedCreditDate : prospectdetailsform.lastUpdatedCreditDate,
-    applicationStatus : prospectdetailsform.applicationStatus,
-    prospectAssetId : prospectdetailsform.prospectAssetId,
-    }
+  updateApplStatus(status: String) {
+    this.prospect_detail.applicationStatus = status;
+    this._prospectlistservice.updateProspectApplStatus(this.prospect_detail).subscribe(id => { console.log(id); })
+  }
 
-  this._prospectlistservice.getProspectDetails(prospect_details).subscribe(result => {
-    console.log('prospect details for the prosopect ID selected' + result);
-    this._prospectlistservice.getProspects;
-    this.toggleForm = !this.toggleForm;
+  getCreditLimit() {
+    this._jsonDataservice.getProspectCreditInfo(this.prospect_detail.panNumber).subscribe(credit_info => {
+      this.curr_prospect_credit_info = <CreditLimitDetails>credit_info;
+      if (this.curr_prospect_credit_info.creditLimit > 0) {
+        console.log("In If body");
+        this.prospect_detail.creditLimit = this.curr_prospect_credit_info.creditLimit;
+        this.prospect_detail.lastUpdatedCreditDate = this.curr_prospect_credit_info.lastUpdatedCreditDate;
+        this.prospect_detail.applicationStatus = "CREDIT_REVIEW_IN_PROGRESS";
+        this._prospectlistservice.updateProspectApplStatus(this.prospect_detail).subscribe(id => { console.log(id); });
+      }
+    });
+  }
 
-})
-}
+  updateCreditLimit() {
+    this.getCreditLimit();
+
+
+
+  }
 }

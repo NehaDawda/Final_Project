@@ -1,0 +1,19 @@
+{
+    "credit_info": [
+        {
+            "id": "AMIPD1178N",
+            "creditLimit": "2000000",
+            "lastUpdatedCreditDate": "03-DEC-2018"
+        },
+        {
+            "id": "HMRPT1287F",
+            "creditLimit": "500000",
+            "lastUpdatedCreditDate": "24-JUN-2018"
+        },
+        {
+            "id": "KRTYQ2345A",
+            "creditLimit": "7500000",
+            "lastUpdatedCreditDate": ""
+        }
+    ]
+}

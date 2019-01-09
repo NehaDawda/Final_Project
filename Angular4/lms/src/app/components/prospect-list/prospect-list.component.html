@@ -1,7 +1,7 @@
 <html>
 
 <body>
-  <table>
+  <table *ngIf="!toggleProspectDetails">
     <thead>
       <tr>
         <th>Prospect ID</th>
@@ -18,90 +18,198 @@
         <td>{{p.lastName}}</td>
         <td>{{p.loanType}}</td>
         <td>{{p.applicationStatus}}</td>
-        <td><button type="submit" name="ShowDetails" value="ShowDetails" (click)="showProspectDetails()">Show Details</button></td>
-      </tr>
-      <tr>
-          <div class="editform">
-              <form #prospectdetailsform="ngForm" *ngIf="toggleForm">
-                <h1>Prospect Details</h1>
-                <div class="form-group">
-                  <label for="name">Prospect ID</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.prospectId" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Fisrt Name</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.firstName" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Last Name</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.lastName" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Address</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.address" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Loan type</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.loanType" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Income</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.income" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Required Loan Amount</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.requiredLoanAmt" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">PAN Number</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.panNumber" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Aadhar Number</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.aadharNumber" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Contact Number</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.contactNumber" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Email</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.email" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Enquiry Date</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.enquiryDate" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Date of Birth</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.dateOfBirth" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">City</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.city" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Credit Limit</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.creditLimit" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Last Update Credit Date</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.lastUpdatedCreditDate" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Application Status</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.applicationStatus" required>
-                </div>
-                <div class="form-group">
-                  <label for="name">Prospect Asset Id</label>
-                  <input type="text" class="form-control" #NameControl="ngModel" [(ngModel)]="view_prospect_detail.prospectAssetId" required>
-                </div>
-                <!-- <button type="submit" name="button" class="btn btn-success" [disabled]="frm.invalid">Add Item </button> -->
-              </form>
-            </div>
+        <td><button type="submit" name="ShowDetails" value="ShowDetails" (click)="showProspectDetails(p.prospectId)">Show
+            Details</button></td>
       </tr>
     </tbody>
   </table>
+  <div class="editform">
+    <form #prospectdetailsform="ngForm" *ngIf="toggleProspectDetails">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Prospect ID : {{prospect_detail.prospectId}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-8">
+            <div class="row">
+              <div class="col-xs-6">
+                FirstName
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.firstName}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                LastName
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.lastName}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Address
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.address}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Loan type
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.loanType}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Income
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.income}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Required Loan Amount
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.requiredLoanAmt}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                PAN Number
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.panNumber}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Aadhar Number
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.aadharNumber}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Contact Number
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.contactNumber}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Email Address
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.email}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Enquiry Date
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.enquiryDate | date : 'dd-MMM-yyyy'}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Date of Birth
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.dateOfBirth | date : 'dd-MMM-yyyy'}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                City
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.city}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Credit Limit
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.creditLimit}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Last Updated Credit Date
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.lastUpdatedCreditDate}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Property ID
+              </div>
+              <div class="col-xs-6">
+                : {{prospect_detail.prospectAssetId}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                Application Status
+              </div>
+              <div class="col-xs-6" >
+                : {{prospect_detail.applicationStatus}}
+              </div>
+            </div>
+          </div>
+          </div>
+
+        
+        <div class="row">
+          <div class="col-xs-4">
+            <button name="get-credit-button" class="btn btn-success" (click)="updateCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'NEW'">Get Credit Limit</button>
+            <button name="aprove-credit-button" class="btn btn-success" (click)="approveCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'CREDIT_REVIEW_IN_PROGRESS'">Approve Credit Limit</button>
+            <button name="process-assessment-button" class="btn btn-success" (click)="updateApplStatus('ASESSMENT_IN_PROGRESS')" *ngIf="prospect_detail.applicationStatus == 'CREDIT_LIMIT_APPROVED'">Process for Assessment</button>
+            <button name="view-assessment-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'ASESSMENT_IN_PROGRESS'">View Assessment Details</button>
+            <button name="process-docs-verify-button" class="btn btn-success" (click)="updateApplStatus('DOCS_VERIFICATION_IN_PROGRESS')"  *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Process for Document Verification</button>
+            <button name="view-docs-verify-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFICATION_IN_PROGRESS'">View Document Details</button>
+            <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFIED'">Send for Approval</button>
+            <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL'">Approve</button>
+        </div>
+        <div class="col-xs-4">
+            <button name="back-button" class="btn btn-danger" (click)="updateApplStatus('REJECTED')" *ngIf="prospect_detail.applicationStatus != 'REJECTED'">Reject Loan Application</button>
+        </div>
+        <div class="col-xs-4">
+            <button name="back-button" class="btn btn-success" (click)="showProspectList()">Back to Prospect List</button>
+        </div>
+          </div>
+        
+            
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>

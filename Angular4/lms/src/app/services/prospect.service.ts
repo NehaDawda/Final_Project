@@ -15,13 +15,17 @@ export class ProspectService {
     return this.http.get<Prospect[]>('http://192.168.1.16:8082/prospects/list');
   }
 
-  getProspectDetails(viewprospect : Prospect){
-    return this.http.put('http://192.168.1.16:8082/prospectDetails',viewprospect);
+  getProspectDetails(prospectId : Number){
+    return this.http.get<Prospect>('http://192.168.1.16:8082/prospectDetails/'+prospectId);
   }
 
   addNewProspect(newprospect, newproperty){
     const params = {newprospect, newproperty}
     console.log(params);
     return this.http.post('http://192.168.1.16:8082/loan/register', params);
+  }
+
+  updateProspectApplStatus(prospect: Prospect) {
+    return this.http.put('http://192.168.1.16:8082/updateProspect',prospect);
   }
 }

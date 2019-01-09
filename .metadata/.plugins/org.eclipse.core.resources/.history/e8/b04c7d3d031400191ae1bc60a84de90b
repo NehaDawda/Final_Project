@@ -7,13 +7,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -73,8 +70,8 @@ public class ProspectController {
 		return prospectList;
 	}
 	
-	@GetMapping(value="/prospectDetails/{id}",produces="application/json")
-	public Prospect getProspectDetails(@PathVariable(value="id") String prospectId){
+	@GetMapping(value="/prospectDetails",produces="application/json")
+	public Prospect getProspectDetails(@RequestBody String prospectId){
 		Prospect prospect = null;
 		try {
 			prospect = serviceProspect.getProspectDetails(Long.valueOf(prospectId));

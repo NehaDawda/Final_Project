@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
-<fullyQualifiedTypeName name="javax.persistence.Id"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="javax.sql.DataSource"/>
-<fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Propagation"/>
-<fullyQualifiedTypeName name="javax.persistence.Query"/>
-<fullyQualifiedTypeName name="com.jp.lms.source.exceptions.LmsException"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceProspect"/>
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -47,17 +33,31 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceProperty"/>
-<fullyQualifiedTypeName name="com.jp.lms.source.entities.Property"/>
-<fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoProperty"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-<fullyQualifiedTypeName name="com.jp.lms.source.entities.Prospect"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
 <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceBankEmp"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoBankEmp"/>
 <fullyQualifiedTypeName name="com.jp.lms.source.entities.BankEmployee"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.entities.Customer"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoCustomer"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.exceptions.LmsException"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.entities.Loan"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.entities.HomeLoan"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoHomeLoan"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.daos.DaoProperty"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.entities.Prospect"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.entities.Property"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceNewLoanAppl"/>
+<fullyQualifiedTypeName name="com.jp.lms.source.services.ServiceApproveLoan"/>
+<fullyQualifiedTypeName name="javax.websocket.server.PathParam"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>

@@ -1,6 +1,5 @@
 export class CreditLimitDetails {
-    panNumber:String;
-    aadharNumber:String;
+    id:String;
     creditLimit:Number;
     lastUpdatedCreditDate:Date;
 }
