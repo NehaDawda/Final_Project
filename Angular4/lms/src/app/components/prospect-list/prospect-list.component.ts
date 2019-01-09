@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 })
 export class ProspectListComponent implements OnInit {
   prospectlist : Prospect[];
-  prospectlistwithid : Prospect;
+  toggleForm : boolean=false;
+  view_prospect_detail : Prospect;
+
+
   constructor(private router: Router, private _prospectlistservice : ProspectService) { }
   
 
@@ -21,12 +24,42 @@ export class ProspectListComponent implements OnInit {
     this._prospectlistservice.getProspects().subscribe(prospectList => {this.prospectlist =  prospectList});
   }
 
-  getDetails(prospectId){
-    this.router.navigate(['prospectdetails/'+prospectId]);
+  
+
+  showProspectDetails(i){
+    this.view_prospect_detail = i;
+    this.toggleForm = true;
   }
 
-getProspectListwithId(Id)
-{
-  return this._prospectlistservice.getProspectDetails(Id).subscribe(prospectlistwithid => {this.prospectlistwithid})
+  
+
+  getDetails(prospectdetailsform){
+    let prospect_details : Prospect ={
+    prospectId : this.view_prospect_detail.prospectId,
+    firstName : prospectdetailsform.prospectFName,
+    lastName : prospectdetailsform.prospectLName,
+    address : prospectdetailsform.address,
+    loanType : prospectdetailsform.loanType,
+    income : prospectdetailsform.income,
+    requiredLoanAmt : prospectdetailsform.requiredLoanAmt,
+    panNumber : prospectdetailsform.panNumber,
+    aadharNumber : prospectdetailsform.aadharNumber,
+    contactNumber : prospectdetailsform.contactNumber,
+    email : prospectdetailsform.email,
+    enquiryDate : prospectdetailsform.enquiryDate,
+    dateOfBirth : prospectdetailsform.dateOfBirth,
+    city : prospectdetailsform.city,
+    creditLimit : prospectdetailsform.creditLimit,
+    lastUpdatedCreditDate : prospectdetailsform.lastUpdatedCreditDate,
+    applicationStatus : prospectdetailsform.applicationStatus,
+    prospectAssetId : prospectdetailsform.prospectAssetId,
+    }
+
+  this._prospectlistservice.getProspectDetails(prospect_details).subscribe(result => {
+    console.log('prospect details for the prosopect ID selected' + result);
+    this._prospectlistservice.getProspects;
+    this.toggleForm = !this.toggleForm;
+
+})
 }
 }

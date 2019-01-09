@@ -52,7 +52,7 @@ console.log('Hello');
       prospectAssetId:""
     };
     console.log(prospectform)
-    this._prospectlistservice.addNewProspect(newprospect).subscribe(prospect => {this.NewProspect});
+    //this._prospectlistservice.addNewProspect(newprospect).subscribe(prospect => {this.NewProspect});
   }
   
 }

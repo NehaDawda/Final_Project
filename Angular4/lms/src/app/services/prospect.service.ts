@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Prospect } from '../models/prospect.model';
+import { Property } from '../models/property.model';
 
 
 @Injectable({
@@ -14,11 +15,13 @@ export class ProspectService {
     return this.http.get<Prospect[]>('http://192.168.1.16:8082/prospects/list');
   }
 
-  getProspectDetails(prospectId){
-    return this.http.get('http://192.168.1.16:8082/prospectDetails',prospectId);
+  getProspectDetails(viewprospect : Prospect){
+    return this.http.put('http://192.168.1.16:8082/prospectDetails',viewprospect);
   }
 
-  addNewProspect(newprospect: Prospect){
-    return this.http.post('http://192.168.1.16:8082/register', newprospect)
+  addNewProspect(newprospect, newproperty){
+    const params = {newprospect, newproperty}
+    console.log(params);
+    return this.http.post('http://192.168.1.16:8082/loan/register', params);
   }
 }
