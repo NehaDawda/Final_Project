@@ -1,128 +1,160 @@
-<script type="javascript">
-
-    </script>
-
+<div>
+        welcome {{sharedDataService.loggedInUser.empName}}
+      </div>
 <div class="container">
 
-    <div class="page-header">
-        <h1>Loan Application Form</h1>
-    </div>
     <form class="form-horizontal" #prospectform="ngForm" (ngSubmit)="addProspect(prospectform)">
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="firstName">First Name</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="firstName" ngModel name="firstName" pattern="[A-Za-z]{1,20}" placeholder="Enter First Name"
-                    #FNameControl="ngModel" ngModel required />
-                <div *ngIf="FNameControl?.touched && FNameControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="FNameControl.errors?.required">
-                        First Name is required
-                    </div>
-                    <div *ngIf="FNameControl.errors?.pattern">
-                        Please enter a valid First Name
-                    </div>
-                </div>
-            </div>
-            <label class="col-sm-2 control-label" for="lastName">Last Name</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="lastName" ngModel name="lastName" pattern="[A-Za-z]{1,20}" placeholder="Enter Last Name" 
-                #LNameControl="ngModel" ngModel required />
-                <div *ngIf="LNameControl?.touched && LNameControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="LNameControl.errors?.required">
-                        Last Name is required
-                    </div>
-                    <div *ngIf="LNameControl.errors?.pattern">
-                        Please enter a valid Last Name
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div *ngIf="newID > 0">
+            <div class="col-sm-12">
+                <div class="col-sm-4">
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="name">Address</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="address" ngModel name="address"  pattern="([a-zA-Z0-9]| |/|\\|@|#|\$|%|&)+" placeholder="Enter Full Address"   #AddressControl="ngModel" ngModel required />
-                <div *ngIf="AddressControl?.touched && AddressControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="AddressControl.errors?.required">
-                        Address is required
-                    </div>
-                    <div *ngIf="AddressControl.errors?.pattern">
-                        Please enter a valid Address
-                    </div>
+                </div>
+                <div class="row-sm-4">
+                    Prospect Added Successfully:{{newID}}
                 </div>
             </div>
-            <label class="col-sm-2 control-label" for="city">City</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="city" ngModel name="city"  pattern="[A-Za-z]{1,20}" placeholder="Enter City" #CityControl="ngModel" ngModelrequired />
-                <div *ngIf="CityControl?.touched && CityControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="NameControl.errors?.required">
-                        City is required
-                    </div>
-                    <div *ngIf="CityControl.errors?.pattern">
-                        Please enter a valid City
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="name">Income</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="income" ngModel name="income"  pattern="[0-9]{1,10}" placeholder="Enter Income" #IncomeControl="ngModel" ngModel required />
-                <div *ngIf="IncomeControl?.touched && IncomeControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="IncomeControl.errors?.required">
-                        Income is required
-                    </div>
-                    <div *ngIf="IncomeControl.errors?.pattern">
-                        Please enter valid Income
-                    </div>
-                </div>
-            </div>
-            <label class="col-sm-2 control-label" for="requiredLoanAmt">Required Loan Amount</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="requiredLoanAmt" ngModel name="requiredLoanAmt" pattern="[0-9]{1,8}" placeholder="Enter Required Loan Amount"  #RequiredControl="ngModel" ngModel required />
-                <div *ngIf="RequiredControl?.touched && RequiredControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="RequiredControl.errors?.required">
-                        Required Loan Amount is required
-                    </div>
-                    <div *ngIf="RequiredControl.errors?.pattern">
-                        Please enter valid Required Loan Amount
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="panNumber">PAN Number</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="panNumber" ngModel name="panNumber" pattern="([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})" placeholder="Enter PAN Number"   #PANControl="ngModel" ngModel required />
-                <div *ngIf="PANControl?.touched && PANControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="PANControl.errors?.required">
-                        PAN Number is required
-                    </div>
-                    <div *ngIf="PANControl.errors?.pattern">
-                        Please enter valid PAN Number
-                    </div>
-                </div>
-            </div>
-            <label class="col-sm-2 control-label" for="aadharNumber">ADHAAR Number</label>
-            <div class="col-sm-4">
-                <input class="form-cntrol" id="aadharNumber" ngModel name="aadharNumber" pattern="[0-9]{16}" placeholder="Enter ADHAAR Number" #AadharControl="ngModel" ngModel required />
-                <div *ngIf="AadharControl?.touched && AadharControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="AadharControl.errors?.required">
-                        Aadhar Number is required
-                    </div>
-                    <div *ngIf="AadharControl.errors?.pattern">
-                        Please enter valid Aadhar Number
-                    </div>
-                </div>
-            </div>
-        </div>
+            <br />
+            <br />
+            <div class="col-sm-12">
+                <div class="col-sm-4">
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="contactNumber">Contact Number</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-cntrol" id="contactNumber" pattern="[789][0-9]{9}" ngModel name="contactNumber"
-                    placeholder="Enter Contact Number" #ContactControl="ngModel" ngModel required />
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary" (click)="reloadPageAgain(prospectform)">Apply for
+                        Other Loan Application</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div *ngIf="!newID">
+            <div class="page-header">
+                <h1>Loan Application Form</h1>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="firstName">First Name</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="firstName" ngModel name="firstName" pattern="[A-Za-z]{1,20}"
+                        placeholder="Enter First Name" #FNameControl="ngModel" ngModel required />
+                    <div *ngIf="FNameControl?.touched && FNameControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="FNameControl.errors?.required">
+                            First Name is required
+                        </div>
+                        <div *ngIf="FNameControl.errors?.pattern">
+                            Please enter a valid First Name
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label" for="lastName">Last Name</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="lastName" ngModel name="lastName" pattern="[A-Za-z]{1,20}"
+                        placeholder="Enter Last Name" #LNameControl="ngModel" ngModel required />
+                    <div *ngIf="LNameControl?.touched && LNameControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="LNameControl.errors?.required">
+                            Last Name is required
+                        </div>
+                        <div *ngIf="LNameControl.errors?.pattern">
+                            Please enter a valid Last Name
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Address</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="address" ngModel name="address" pattern="([a-zA-Z0-9]| |/|\\|@|#|\$|%|&)+"
+                        placeholder="Enter Full Address" #AddressControl="ngModel" ngModel required />
+                    <div *ngIf="AddressControl?.touched && AddressControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="AddressControl.errors?.required">
+                            Address is required
+                        </div>
+                        <div *ngIf="AddressControl.errors?.pattern">
+                            Please enter a valid Address
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label" for="city">City</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="city" ngModel name="city" pattern="[A-Za-z]{1,20}" placeholder="Enter City"
+                        #CityControl="ngModel" ngModelrequired />
+                    <div *ngIf="CityControl?.touched && CityControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="NameControl.errors?.required">
+                            City is required
+                        </div>
+                        <div *ngIf="CityControl.errors?.pattern">
+                            Please enter a valid City
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Income</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="income" ngModel name="income" pattern="[0-9]{1,10}" placeholder="Enter Income"
+                        #IncomeControl="ngModel" ngModel required />
+                    <div *ngIf="IncomeControl?.touched && IncomeControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="IncomeControl.errors?.required">
+                            Income is required
+                        </div>
+                        <div *ngIf="IncomeControl.errors?.pattern">
+                            Please enter valid Income
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label" for="requiredLoanAmt">Required Loan Amount</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="requiredLoanAmt" ngModel name="requiredLoanAmt" pattern="[0-9]{1,8}"
+                        placeholder="Enter Required Loan Amount" #RequiredControl="ngModel" ngModel required />
+                    <div *ngIf="RequiredControl?.touched && RequiredControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="RequiredControl.errors?.required">
+                            Required Loan Amount is required
+                        </div>
+                        <div *ngIf="RequiredControl.errors?.pattern">
+                            Please enter valid Required Loan Amount
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="panNumber">PAN Number</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="panNumber" ngModel name="panNumber" pattern="([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})"
+                        placeholder="Enter PAN Number" #PANControl="ngModel" ngModel required />
+                    <div *ngIf="PANControl?.touched && PANControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="PANControl.errors?.required">
+                            PAN Number is required
+                        </div>
+                        <div *ngIf="PANControl.errors?.pattern">
+                            Please enter valid PAN Number
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label" for="aadharNumber">ADHAAR Number</label>
+                <div class="col-sm-4">
+                    <input class="form-cntrol" id="aadharNumber" ngModel name="aadharNumber" pattern="[0-9]{16}"
+                        placeholder="Enter ADHAAR Number" #AadharControl="ngModel" ngModel required />
+                    <div *ngIf="AadharControl?.touched && AadharControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="AadharControl.errors?.required">
+                            Aadhar Number is required
+                        </div>
+                        <div *ngIf="AadharControl.errors?.pattern">
+                            Please enter valid Aadhar Number
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="contactNumber">Contact Number</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="contactNumber" pattern="[789][0-9]{9}" ngModel name="contactNumber"
+                        placeholder="Enter Contact Number" #ContactControl="ngModel" ngModel required />
                     <div *ngIf="ContactControl?.touched && ContactControl?.invalid" class="alert alert-danger">
                         <div *ngIf="ContactControl.errors?.required">
                             Contact Number is required
@@ -131,160 +163,174 @@
                             Please enter valid Contact Number
                         </div>
                     </div>
-            </div>
-            <label class="col-sm-2 control-label" for="email">Email</label>
-            <div class="col-sm-4">
-                <input type="email" class="form-cntrol" id="email" ngModel name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email Address"
-                #EmailControl="ngModel" ngModel required />
-                <div *ngIf="EmailControl?.touched && EmailControl?.invalid" class="alert alert-danger">
-                    <div *ngIf="EmailControl.errors?.required">
-                        Email is required
-                    </div>
-                    <div *ngIf="EmailControl.errors?.pattern">
-                        Please enter valid Email
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="col-sm-2 control-label" for="birthDate">Date of Birth*</label>
-            <div class="col-sm-4">
-                <input type="date" id="birthDate" ngModel name="dateOfBirth" class="form-control">
-            </div>
-            <label class="col-sm-2 control-label" for="loanType">Loan Type</label>
-            <select class="col-sm-2 control-label" id="loanType" ngModel name="loanType" required (change)="showSubElements()">
-                <option selected>Select Loan Type</option>
-                <option value="HOME_LOAN">Home Loan</option>
-                <option value="VEHICAL_LOAN">Vehicle Loan</option>
-                <option value="EDUCATION_LOAN">Education Loan</option>
-            </select>
-        </div>
-
-        <div id="propertyFields" style="display: none">
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="registrationNumber">Registration No</label>
+                <label class="col-sm-2 control-label" for="email">Email</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="registrationNumber" ngModel name="registrationNumber" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Registration Number"
-                    #RegistrationControl="ngModel" ngModel required />
-                    <div *ngIf="RegistrationControl?.touched && RegistrationControl?.invalid" class="alert alert-danger">
-                        <div *ngIf="RegistrationControl.errors?.required">
-                            Registration is required
+                    <input type="email" class="form-cntrol" id="email" ngModel name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        placeholder="Enter Email Address" #EmailControl="ngModel" ngModel required />
+                    <div *ngIf="EmailControl?.touched && EmailControl?.invalid" class="alert alert-danger">
+                        <div *ngIf="EmailControl.errors?.required">
+                            Email is required
                         </div>
-                        <div *ngIf="RegistrationControl.errors?.pattern">
-                            Please enter valid Registration
-                        </div>
-                    </div>
-                </div>
-                <label class="col-sm-2 control-label" for="propertyType">Property Type</label>
-            <select class="col-sm-2 control-label" id="propertyType" ngModel name="propertyType" required >
-                <option selected>Select Property Type</option>
-                <option value="1-BHK">1-BHK</option>
-                <option value="2-BHK">2-BHK</option>
-                <option value="3-BHK">3-BHK</option>
-                <option value="BUNGALOW">BUNGALOW</option>
-                <option value="ROW_HOUSE">ROW_HOUSE</option>
-            </select>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Apartment No</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="apartmentno" ngModel name="apartmentNo" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Apartment Number"
-                    #AptNoControl="ngModel" ngModel required />
-                    <div *ngIf="AptNoControl?.touched && AptNoControl?.invalid" class="alert alert-danger">
-                        <div *ngIf="AptNoControl.errors?.required">
-                            Apartment Number is required
-                        </div>
-                        <div *ngIf="AptNoControl.errors?.pattern">
+                        <div *ngIf="EmailControl.errors?.pattern">
                             Please enter valid Email
                         </div>
                     </div>
                 </div>
-                <label class="col-sm-2 control-label" for="name">Apartment Name</label>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="birthDate">Date of Birth*</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="apartmentname" ngModel name="apartmentName" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Apartment Name"
-                    #ApnNmControl="ngModel" ngModel required />
-                    <div *ngIf="ApnNmControl?.touched && ApnNmControl?.invalid" class="alert alert-danger">
-                        <div *ngIf="ApnNmControl.errors?.required">
-                            Apartment Name is required
+                    <input type="date" id="birthDate" ngModel name="dateOfBirth" class="form-control">
+                </div>
+                <label class="col-sm-2 control-label" for="loanType">Loan Type</label>
+                <select class="col-sm-2 control-label" id="loanType" ngModel name="loanType" required (change)="showSubElements()">
+                    <option selected>Select Loan Type</option>
+                    <option value="HOME_LOAN">Home Loan</option>
+                    <option value="VEHICAL_LOAN">Vehicle Loan</option>
+                    <option value="EDUCATION_LOAN">Education Loan</option>
+                </select>
+            </div>
+
+            <div id="propertyFields" style="display: none">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="registrationNumber">Registration No</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="registrationNumber" ngModel name="registrationNumber"
+                            pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Registration Number" #RegistrationControl="ngModel"
+                            ngModel required />
+                        <div *ngIf="RegistrationControl?.touched && RegistrationControl?.invalid" class="alert alert-danger">
+                            <div *ngIf="RegistrationControl.errors?.required">
+                                Registration is required
+                            </div>
+                            <div *ngIf="RegistrationControl.errors?.pattern">
+                                Please enter valid Registration
+                            </div>
                         </div>
-                        <div *ngIf="ApnNmControl.errors?.pattern">
-                            Please enter valid Apartment Name
+                    </div>
+                    <label class="col-sm-2 control-label" for="propertyType">Property Type</label>
+                    <select class="col-sm-2 control-label" id="propertyType" ngModel name="propertyType" required>
+                        <option selected>Select Property Type</option>
+                        <option value="1-BHK">1-BHK</option>
+                        <option value="2-BHK">2-BHK</option>
+                        <option value="3-BHK">3-BHK</option>
+                        <option value="BUNGALOW">BUNGALOW</option>
+                        <option value="ROW_HOUSE">ROW_HOUSE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Apartment No</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="apartmentno" ngModel name="apartmentNo" pattern="[a-zA-Z0-9]{1,20}"
+                            placeholder="Enter Apartment Number" #AptNoControl="ngModel" ngModel required />
+                        <div *ngIf="AptNoControl?.touched && AptNoControl?.invalid" class="alert alert-danger">
+                            <div *ngIf="AptNoControl.errors?.required">
+                                Apartment Number is required
+                            </div>
+                            <div *ngIf="AptNoControl.errors?.pattern">
+                                Please enter valid Email
+                            </div>
+                        </div>
+                    </div>
+                    <label class="col-sm-2 control-label" for="name">Apartment Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="apartmentname" ngModel name="apartmentName" pattern="[a-zA-Z0-9]{1,20}"
+                            placeholder="Enter Apartment Name" #ApnNmControl="ngModel" ngModel required />
+                        <div *ngIf="ApnNmControl?.touched && ApnNmControl?.invalid" class="alert alert-danger">
+                            <div *ngIf="ApnNmControl.errors?.required">
+                                Apartment Name is required
+                            </div>
+                            <div *ngIf="ApnNmControl.errors?.pattern">
+                                Please enter valid Apartment Name
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Street Name</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="streetname" ngModel name="streetName" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Street Name"
-                    #StreetNmControl="ngModel" ngModel required />
-                    <div *ngIf="StreetNmControl?.touched && StreetNmControl?.invalid" class="alert alert-danger">
-                        <div *ngIf="StreetNmControl.errors?.required">
-                            Apartment Name is required
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Street Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="streetname" ngModel name="streetName" pattern="[a-zA-Z0-9]{1,20}"
+                            placeholder="Enter Street Name" #StreetNmControl="ngModel" ngModel required />
+                        <div *ngIf="StreetNmControl?.touched && StreetNmControl?.invalid" class="alert alert-danger">
+                            <div *ngIf="StreetNmControl.errors?.required">
+                                Apartment Name is required
+                            </div>
+                            <div *ngIf="StreetNmControl.errors?.pattern">
+                                Please enter valid Apartment Name
+                            </div>
                         </div>
-                        <div *ngIf="StreetNmControl.errors?.pattern">
-                            Please enter valid Apartment Name
+                    </div>
+                    <label class="col-sm-2 control-label" for="name">Locality</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="locality" ngModel name="locality" pattern="[a-zA-Z0-9]{1,20}"
+                            placeholder="Enter Locality" #LocalityControl="ngModel" ngModel required />
+                        <div *ngIf="LocalityControl?.touched && LocalityControl?.invalid" class="alert alert-danger">
+                            <div *ngIf="LocalityControl.errors?.required">
+                                Apartment Name is required
+                            </div>
+                            <div *ngIf="LocalityControl.errors?.pattern">
+                                Please enter valid Apartment Name
+                            </div>
                         </div>
                     </div>
                 </div>
-                <label class="col-sm-2 control-label" for="name">Locality</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="locality" ngModel name="locality" pattern="[a-zA-Z0-9]{1,20}" placeholder="Enter Locality"
-                    #LocalityControl="ngModel" ngModel  required />
-                    <div *ngIf="LocalityControl?.touched && LocalityControl?.invalid" class="alert alert-danger">
-                        <div *ngIf="LocalityControl.errors?.required">
-                            Apartment Name is required
-                        </div>
-                        <div *ngIf="LocalityControl.errors?.pattern">
-                            Please enter valid Apartment Name
-                        </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Landmark</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="landmark" ngModel name="landmark" placeholder="Enter Landmark"
+                            required />
+                    </div>
+                    <label class="col-sm-2 control-label" for="name">City</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="city" ngModel name="city" placeholder="Enter City"
+                            required />
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">State</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="state" ngModel name="state" placeholder="Enter State"
+                            required />
+                    </div>
+                    <label class="col-sm-2 control-label" for="name">Country</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="country" ngModel name="country" placeholder="Enter Country"
+                            required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Zip Code</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="zipCode" ngModel name="zipCode" placeholder="Enter ZipCode"
+                            required />
+                    </div>
+                    <label class="col-sm-2 control-label" for="name">Purchased Price</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-cntrol" id="purchasedPrice" ngModel name="purchasedPrice"
+                            placeholder="Enter Property Puchase Price" placeholder="Enter Contact Number" required />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-5">
+
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" class="btn btn-primary btn-success" center [disabled]="prospectform.invalid">Apply</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-primary btn-danger" (click)="clearForm(prospectform)">Clear</button>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Landmark</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="landmark" ngModel name="landmark" placeholder="Enter Landmark"
-                        required />
-                </div>
-                <label class="col-sm-2 control-label" for="name">City</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="city" ngModel name="city" placeholder="Enter City"
-                        required />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">State</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="state" ngModel name="state" placeholder="Enter State"
-                        required />
-                </div>
-                <label class="col-sm-2 control-label" for="name">Country</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="country" ngModel name="country" placeholder="Enter Country"
-                        required />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Zip Code</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="zipCode" ngModel name="zipCode" placeholder="Enter ZipCode"
-                        required />
-                </div>
-                <label class="col-sm-2 control-label" for="name">Purchased Price</label>
-                <div class="col-sm-4">
-                    <input type="text" class="form-cntrol" id="purchasedPrice" ngModel name="purchasedPrice" placeholder="Enter Property Puchase Price"
-                        placeholder="Enter Contact Number" required />
-                </div>
-            </div>
 
         </div>
-        <button type="submit" class="btn btn-primary" center [disabled]="prospectform.invalid">Apply</button>
     </form>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedDataService } from 'src/app/services/shared-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedDataService:SharedDataService,private router: Router) { }
 
   ngOnInit() {
   }
 
+  logout(){
+    this.sharedDataService.loggedInUser=null;
+    this.router.navigate(['/login']);
+  }
 }

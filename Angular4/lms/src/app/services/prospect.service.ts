@@ -40,4 +40,10 @@ export class ProspectService {
   approveLoan(prospect:Prospect){
     return this.http.post('http://192.168.1.16:8082/loan/approve',prospect);
   }
+
+  validateLogin(empId:String, pwd:String){
+    const params = {empId, pwd}
+    console.log(params);
+    return this.http.post('http://192.168.1.16:8082/validate',params);
+  }
 }

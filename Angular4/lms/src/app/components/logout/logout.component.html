@@ -1,3 +1,7 @@
-<p>
-  logout works!
-</p>
+<div>
+    welcome {{sharedDataService.loggedInUser.empName}}
+  </div>
+
+<div>
+    <button type="button" class="btn btn-primary" (click)="logout()">LOGOUT</button>
+</div>

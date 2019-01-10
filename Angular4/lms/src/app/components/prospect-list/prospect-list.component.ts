@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Property } from 'src/app/models/property.model';
 import { PropertyAssessmentDetails } from 'src/app/models/property-assessement-details';
 import { updateBinding } from '@angular/core/src/render3/instructions';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-prospect-list',
@@ -22,7 +23,7 @@ export class ProspectListComponent implements OnInit {
   curr_property_market_value:PropertyAssessmentDetails;
 
   constructor(private router: Router, private _prospectlistservice: ProspectService,
-    private _jsonDataservice: JsondataService) { }
+    private _jsonDataservice: JsondataService,private sharedDataService:SharedDataService) { }
 
   ngOnInit() {
     this._prospectlistservice.getProspects().subscribe(prospectList => { this.prospectlist = prospectList });

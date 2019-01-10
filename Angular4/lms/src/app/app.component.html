@@ -1,10 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
 </div>
-
 
 <div>
   <div style="padding:5px">
@@ -12,18 +11,19 @@
       <li routerLinkActive="active">
         <a routerLink="Home">Home</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="!sharedDataService.loggedInUser">
         <a routerLink="login">Login</a>
       </li>
       <li routerLinkActive="active">
-        <a routerLink="registration">Registration</a>
+        <a routerLink="registration">Loan Application</a>
       </li>
       <li routerLinkActive="active">
+          <a routerLink="prospectlist">Prospect List</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
         <a routerLink="logout">Logout</a>
       </li>
-      <li routerLinkActive="active">
-        <a routerLink="prospectlist">Prospect List</a>
-      </li>
+      
 
     </ul>
     <br>

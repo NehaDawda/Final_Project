@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { ProspectService } from 'src/app/services/prospect.service';
 import { Prospect } from 'src/app/models/prospect.model';
 import { Property } from 'src/app/models/property.model';
+import { Router } from '@angular/router';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +14,9 @@ import { Property } from 'src/app/models/property.model';
 export class RegistrationComponent implements OnInit {
   NewProspect: Prospect;
   NewProperty: Property;
-  constructor(private _prospectlistservice: ProspectService) { }
+  newID:Number;
+  constructor(private _prospectlistservice: ProspectService,
+    private router: Router,private sharedDataService:SharedDataService) { }
 
   ngOnInit() {
   }
@@ -64,7 +68,21 @@ export class RegistrationComponent implements OnInit {
     }
 
     console.log(this.NewProspect)
-    this._prospectlistservice.addNewProspect(this.NewProspect, this.NewProperty).subscribe(prospect => { this.NewProspect });
+    this._prospectlistservice.addNewProspect(this.NewProspect, this.NewProperty).subscribe((prospectId) => { 
+      this.newID=prospectId;
+      this.NewProperty=null;
+      this.NewProspect=null;
+      prospectform.value.registrationNumber="";
+    
+    });
   }
 
+  clearForm(prospectform: NgForm){
+    prospectform.reset();
+  }
+
+  reloadPageAgain(prospectform: NgForm){
+    this.newID=null;
+    this.clearForm(prospectform);
+  }
 }
