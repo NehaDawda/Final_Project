@@ -47,17 +47,20 @@ export class RegistrationComponent implements OnInit {
     };
 
     this.NewProperty  = {
-      propertyId: "Property1",
-    apartmentNo:"Property1",
-    apartmentName:"Property1",
-    streetName:"Property1",
-    locality:"Property1",
-    landmark:"Property1",
-    city:"Property1",
-    state:"Property1",
-    country:"Property1",
-    zipCode:"Property1",
-    purchasedPrice:5000000
+      propertyId: "1",
+    registrationNumber : prospectform.value.registrationNumber,
+    propertyType : prospectform.value.propertyType,
+    apartmentNo:prospectform.value.apartmentNo,
+    apartmentName:prospectform.value.apartmentName,
+    streetName:prospectform.value.streetName,
+    locality:prospectform.value.locality,
+    landmark:prospectform.value.landmark,
+    city:prospectform.value.city,
+    state:prospectform.value.state,
+    country:prospectform.value.country,
+    zipCode:prospectform.value.zipCode,
+    purchasedPrice:prospectform.value.purchasedPrice,
+    marketValue:40000
     }
 
     console.log(this.NewProspect)
