@@ -1,0 +1,39 @@
+<p>
+  approveloans works!
+</p>
+<div class="container">
+    <div class="panel panel-primary ">
+      <div class="panel-heading">
+        <h3 class="panel-title">Loan Prospect List</h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Prospect ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Loan Type</th>
+            <th>Required Loan Amount</th>
+            <th>Application Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of prospectlist">
+            <td>{{p.prospectId}}</td>
+            <td>{{p.firstName}}</td>
+            <td>{{p.lastName}}</td>
+            <td>{{p.loanType}}</td>
+            <td>{{p.requiredLoanAmt}}</td>
+            <td>{{p.applicationStatus}}</td>
+            <td><button class="btn btn-primary" type="submit" name="ShowDetails" value="ShowDetails" (click)="approve(p)">Approve
+                </button></td>
+            <td><button class="btn btn-primary" type="submit" name="ShowDetails" value="ShowDetails" (click)="reject(p)">Reject
+                  </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

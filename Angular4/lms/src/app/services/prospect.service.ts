@@ -15,6 +15,10 @@ export class ProspectService {
     return this.http.get<Prospect[]>('http://192.168.1.16:8082/prospects/list');
   }
 
+  getProspectsbyStatus(status:String) {
+    return this.http.get<Prospect[]>('http://192.168.1.16:8082//prospects/status/'+status);
+  }
+
   getProspectDetails(prospectId : Number){
     return this.http.get<Prospect>('http://192.168.1.16:8082/prospectDetails/'+prospectId);
   }

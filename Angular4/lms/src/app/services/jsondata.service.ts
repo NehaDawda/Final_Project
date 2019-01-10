@@ -15,8 +15,4 @@ export class JsondataService {
   getPropertyMarketValue(key:String){
     return this.http.get('http://localhost:3002/value_info/'+key);
   }
-
-  addNewProspect(newprospect: Prospect){
-    return this.http.post('http://localhost:8080/Loan_Management_System/register', newprospect)
-  }
 }

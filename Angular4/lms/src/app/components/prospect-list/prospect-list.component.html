@@ -286,7 +286,7 @@
           <!-- <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFIED'">Send for Approval</button> -->
           <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')"
             *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Send for Approval</button>
-          <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL'">Approve</button>
+          <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL' && sharedDataService.loggedInUser.empType=='MANAGER'">Approve</button>
         </div>
         <div class="col-xs-4">
           <button name="back-button" class="btn btn-danger" (click)="updateApplStatus('REJECTED')" *ngIf="prospect_detail.applicationStatus != 'REJECTED'">Reject

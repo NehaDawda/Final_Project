@@ -11,6 +11,7 @@ import { ProspectDetailsComponent } from './components/prospect-details/prospect
 import { ProspectListComponent } from './components/prospect-list/prospect-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ApproveloansComponent } from './components/approveloans/approveloans.component';
 
 const appRoutes:Routes = [
   {path:'Home', component:HomeComponent},
@@ -28,7 +29,8 @@ const appRoutes:Routes = [
     LogoutComponent,
     HomeComponent,
     ProspectDetailsComponent,
-    ProspectListComponent
+    ProspectListComponent,
+    ApproveloansComponent
   ],
   imports: [
     BrowserModule,

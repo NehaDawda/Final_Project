@@ -6,6 +6,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProspectListComponent } from './components/prospect-list/prospect-list.component';
 import { ProspectDetailsComponent } from './components/prospect-details/prospect-details.component';
+import { ApproveloansComponent } from './components/approveloans/approveloans.component';
 
 
 const appRoutes:Routes = [
@@ -14,6 +15,7 @@ const appRoutes:Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'logout', component:LogoutComponent},
   {path: 'prospectlist', component:ProspectListComponent},
+  {path: 'approveloans', component:ApproveloansComponent},
   {path: 'prospectdetails/:prospectId', component:ProspectDetailsComponent}
   
 ]

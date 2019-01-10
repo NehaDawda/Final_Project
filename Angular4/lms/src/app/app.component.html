@@ -20,6 +20,9 @@
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
           <a routerLink="prospectlist">Prospect List</a>
       </li>
+      <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser && sharedDataService.loggedInUser.empType=='MANAGER'">
+          <a routerLink="approveloans">Approve Loans</a>
+      </li>
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
         <a routerLink="logout">Logout</a>
       </li>

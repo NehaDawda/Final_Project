@@ -45,8 +45,8 @@ public class DaoProspectImpl implements DaoProspect {
 
 	@Override
 	public List<Prospect> getProspectsByStatus(String status) throws LmsException {
-		TypedQuery<Prospect> query = entityManager.createQuery("SELECT p from Prospect p where p.applicationStatus = :app_status", Prospect.class);
-		//Query query = entityManager.createQuery("from Prospect p where p.applicationStatus = :app_status");
+		//TypedQuery<Prospect> query = entityManager.createQuery("SELECT p from PROSPECT p where p.applicationStatus = :app_status", Prospect.class);
+		Query query = entityManager.createQuery("from PROSPECT p where p.applicationStatus = :app_status");
 		query.setParameter("app_status", status);
 		List<Prospect> prospectList = query.getResultList() ;
 		return prospectList;

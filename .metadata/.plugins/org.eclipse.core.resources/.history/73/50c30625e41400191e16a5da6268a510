@@ -81,7 +81,7 @@ public class ProspectController {
 		return prospect;
 	}
 	
-	@GetMapping(value="/prospects/status/{status}",produces="application/json")
+	@PostMapping(value="/prospects/status/{status}",produces="application/json")
 	public List<Prospect> getProspectsByStatus(@PathVariable(value="status") String status){
 		List<Prospect> prospectList = null;
 		try {

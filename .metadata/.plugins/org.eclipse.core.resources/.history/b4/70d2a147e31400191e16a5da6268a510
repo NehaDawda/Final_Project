@@ -38,9 +38,8 @@ import com.jp.lms.source.services.ServiceProspect;
  * Multi-action controllers.
  * 
  * http://localhost:8082/prospects/list
- * http://localhost:8082/prospectDetails
- * http://localhost:8082/prospects/status/{status}
- * http://localhost:8082/register
+ * http://localhost:8082/Loan_Management_System/prospectDetails
+ * http://localhost:8082/Loan_Management_System/register
  * 
  */
 @CrossOrigin(origins = "*", allowedHeaders = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
@@ -81,8 +80,8 @@ public class ProspectController {
 		return prospect;
 	}
 	
-	@GetMapping(value="/prospects/status/{status}",produces="application/json")
-	public List<Prospect> getProspectsByStatus(@PathVariable(value="status") String status){
+	@GetMapping(value="/prospects/status",produces="application/json")
+	public List<Prospect> getProspectsByStatus(@RequestBody String status){
 		List<Prospect> prospectList = null;
 		try {
 			prospectList = serviceProspect.getProspectsByStatus(status);

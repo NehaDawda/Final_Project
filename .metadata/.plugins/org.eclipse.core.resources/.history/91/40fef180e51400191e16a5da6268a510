@@ -7,8 +7,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jp.lms.source.entities.BankEmployee;
+import com.jp.lms.source.entities.Property;
+import com.jp.lms.source.entities.Prospect;
 import com.jp.lms.source.exceptions.LmsException;
 
 @Repository("daoEmp")
