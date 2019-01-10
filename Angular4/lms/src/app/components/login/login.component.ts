@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
 
       this.sharedDataService.loggedInUser=emp;
       console.log(user);
-      this.router.navigate(['/logout']);
+  //{path: 'prospectlist', component:ProspectListComponent},
+      this.router.navigate(['/prospectlist']);
     })
   }
 }
