@@ -1,4 +1,6 @@
 export class Property {
+    registrationNumber : String;
+    propertyType : String;
     propertyId:String;
     apartmentNo:String;
     apartmentName:String;
@@ -10,7 +12,5 @@ export class Property {
     country:String;
     zipCode:String;
     purchasedPrice:Number;
-    registrationNumber: String;
-    propertyType:String;
-    marketValue: Number;
+    marketValue:Number;
 }
