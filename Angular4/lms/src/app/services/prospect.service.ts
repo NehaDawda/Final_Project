@@ -19,6 +19,10 @@ export class ProspectService {
     return this.http.get<Prospect>('http://192.168.1.16:8082/prospectDetails/'+prospectId);
   }
 
+  getPropertyDetails(propertyId : Number){
+    return this.http.get<Property>('http://192.168.1.16:8082/propertyDetails/'+propertyId);
+  }
+
   addNewProspect(newprospect, newproperty){
     const params = {newprospect, newproperty}
     console.log(params);
@@ -27,5 +31,13 @@ export class ProspectService {
 
   updateProspectApplStatus(prospect: Prospect) {
     return this.http.put('http://192.168.1.16:8082/updateProspect',prospect);
+  }
+
+  updateProperty(property: Property) {
+    return this.http.put('http://192.168.1.16:8082/updateProperty',property);
+  }
+
+  approveLoan(prospect:Prospect){
+    return this.http.post('http://192.168.1.16:8082/loan/approve',prospect);
   }
 }

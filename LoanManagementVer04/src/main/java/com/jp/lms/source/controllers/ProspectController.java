@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,7 +24,6 @@ import com.jp.lms.source.entities.Prospect;
 import com.jp.lms.source.exceptions.LmsException;
 import com.jp.lms.source.services.ServiceApproveLoan;
 import com.jp.lms.source.services.ServiceNewLoanAppl;
-import com.jp.lms.source.services.ServiceProperty;
 import com.jp.lms.source.services.ServiceProspect;
 
 //import com.jp.lms.source.services.ServiceProspect;
@@ -47,7 +44,6 @@ import com.jp.lms.source.services.ServiceProspect;
  */
 @CrossOrigin(origins = "*", allowedHeaders = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
-//@RequestMapping("/prospects")
 public class ProspectController {
 	@Autowired
 	@Qualifier("service")
@@ -94,9 +90,10 @@ public class ProspectController {
 		}
 		return prospectList;
 	}
-	
 	@PutMapping(value="/updateProspect",consumes="application/json")
 	public Long updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
+		System.out.println("In Update, Date:"+prospect.getLastUpdatedCreditDate());
+		System.out.println(prospect);
 		return serviceProspect.updateProspect(prospect);
 	}
 	
@@ -108,6 +105,8 @@ public class ProspectController {
 		
 		Property property = new Property();
 		
+		property.setRegistrationNumber(propertyJson.get("registrationNumber").toString());
+		property.setPropertyType(propertyJson.get("propertyType").toString());
 		property.setApartmentNo(propertyJson.get("apartmentNo").toString());
 		property.setApartmentName(propertyJson.get("apartmentName").toString());
 		property.setStreetName(propertyJson.get("streetName").toString());

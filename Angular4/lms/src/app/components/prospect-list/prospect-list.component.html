@@ -30,159 +30,233 @@
           <h3 class="panel-title">Prospect ID : {{prospect_detail.prospectId}}</h3>
         </div>
         <div class="panel-body">
-          <div class="col-xs-8">
+          <div class="col-xs-12">
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 FirstName
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.firstName}}
               </div>
+              <div class="col-xs-2">
+                  LastName
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.lastName}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                LastName
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.lastName}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 Address
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.address}}
               </div>
+              <div class="col-xs-2">
+                  Loan type
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.loanType}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                Loan type
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.loanType}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 Income
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.income}}
               </div>
+              <div class="col-xs-2">
+                  Required Loan Amount
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.requiredLoanAmt}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                Required Loan Amount
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.requiredLoanAmt}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 PAN Number
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.panNumber}}
               </div>
+              <div class="col-xs-2">
+                  Aadhar Number
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.aadharNumber}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                Aadhar Number
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.aadharNumber}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 Contact Number
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.contactNumber}}
               </div>
+              <div class="col-xs-2">
+                  Email Address
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.email}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                Email Address
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.email}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 Enquiry Date
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.enquiryDate | date : 'dd-MMM-yyyy'}}
               </div>
+              <div class="col-xs-2">
+                  Date of Birth
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.dateOfBirth | date : 'dd-MMM-yyyy'}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
-                Date of Birth
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.dateOfBirth | date : 'dd-MMM-yyyy'}}
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 City
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.city}}
               </div>
+              <div class="col-xs-2">
+                  Application Status
+                </div>
+                <div class="col-xs-4" >
+                  : {{prospect_detail.applicationStatus}}
+                </div>
             </div>
 
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-2">
                 Credit Limit
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-4">
                 : {{prospect_detail.creditLimit}}
               </div>
+              <div class="col-xs-2">
+                  Last Updated Credit Date
+                </div>
+                <div class="col-xs-4">
+                  : {{prospect_detail.lastUpdatedCreditDate | date : 'dd-MMM-yyyy'}}
+                </div>
             </div>
 
-            <div class="row">
-              <div class="col-xs-6">
-                Last Updated Credit Date
-              </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.lastUpdatedCreditDate}}
-              </div>
-            </div>
+           
 
             <div class="row">
-              <div class="col-xs-6">
-                Property ID
+                <div class="col-xs-2">
+                  Registration Number
+                </div>
+                <div class="col-xs-4">
+                  : {{property_detail.registrationNumber}}
+                </div>
+                <div class="col-xs-2">
+                    Property Type
+                  </div>
+                  <div class="col-xs-4">
+                    : {{property_detail.propertyType}}
+                  </div>
               </div>
-              <div class="col-xs-6">
-                : {{prospect_detail.prospectAssetId}}
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="col-xs-6">
-                Application Status
-              </div>
-              <div class="col-xs-6" >
-                : {{prospect_detail.applicationStatus}}
-              </div>
-            </div>
+              <div class="row">
+                  <div class="col-xs-2">
+                      Apartment No
+                  </div>
+                  <div class="col-xs-4">
+                    : {{property_detail.apartmentNo}}
+                  </div>
+                  <div class="col-xs-2">
+                      Apartment Name
+                    </div>
+                    <div class="col-xs-4">
+                      : {{property_detail.apartmentName}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-2">
+                        Street Name
+                    </div>
+                    <div class="col-xs-4">
+                      : {{property_detail.streetName}}
+                    </div>
+                    <div class="col-xs-2">
+                        Locality
+                      </div>
+                      <div class="col-xs-4">
+                        : {{property_detail.locality}}
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-xs-2">
+                          Landmark
+                      </div>
+                      <div class="col-xs-4">
+                        : {{property_detail.landmark}}
+                      </div>
+                      <div class="col-xs-2">
+                          City
+                        </div>
+                        <div class="col-xs-4">
+                          : {{property_detail.city}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-2">
+                            State
+                        </div>
+                        <div class="col-xs-4">
+                          : {{property_detail.state}}
+                        </div>
+                        <div class="col-xs-2">
+                            Country
+                          </div>
+                          <div class="col-xs-4">
+                            : {{property_detail.country}}
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-xs-2">
+                              Zip Code
+                          </div>
+                          <div class="col-xs-4">
+                            : {{property_detail.zipCode}}
+                          </div>
+                          <div class="col-xs-2">
+                              Purchased Price
+                            </div>
+                            <div class="col-xs-4">
+                              : {{property_detail.purchasedPrice}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-2">
+                                Market Value
+                            </div>
+                            <div class="col-xs-4">
+                              : {{property_detail.marketValue}}
+                            </div>
+                            <div class="col-xs-2">
+                                
+                              </div>
+                              <div class="col-xs-4">
+                                
+                              </div>
+                          </div>
           </div>
           </div>
 
@@ -190,12 +264,13 @@
         <div class="row">
           <div class="col-xs-4">
             <button name="get-credit-button" class="btn btn-success" (click)="updateCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'NEW'">Get Credit Limit</button>
-            <button name="aprove-credit-button" class="btn btn-success" (click)="approveCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'CREDIT_REVIEW_IN_PROGRESS'">Approve Credit Limit</button>
-            <button name="process-assessment-button" class="btn btn-success" (click)="updateApplStatus('ASESSMENT_IN_PROGRESS')" *ngIf="prospect_detail.applicationStatus == 'CREDIT_LIMIT_APPROVED'">Process for Assessment</button>
-            <button name="view-assessment-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'ASESSMENT_IN_PROGRESS'">View Assessment Details</button>
-            <button name="process-docs-verify-button" class="btn btn-success" (click)="updateApplStatus('DOCS_VERIFICATION_IN_PROGRESS')"  *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Process for Document Verification</button>
-            <button name="view-docs-verify-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFICATION_IN_PROGRESS'">View Document Details</button>
-            <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFIED'">Send for Approval</button>
+            <button name="aprove-credit-button" class="btn btn-success" (click)="updateApplStatus('CREDIT_LIMIT_APPROVED')" *ngIf="prospect_detail.applicationStatus == 'CREDIT_REVIEW_IN_PROGRESS'">Approve Credit Limit</button>
+            <button name="process-assessment-button" class="btn btn-success" (click)="updateMarketValue()" *ngIf="prospect_detail.applicationStatus == 'CREDIT_LIMIT_APPROVED'">Process for Assessment</button>
+            <button name="view-assessment-button" class="btn btn-success" (click)="updateApplStatus('ASSESSMENT_APPROVED')" *ngIf="prospect_detail.applicationStatus == 'ASESSMENT_IN_PROGRESS'">Approve Assessment</button>
+            <!-- <button name="process-docs-verify-button" class="btn btn-success" (click)="updateApplStatus('DOCS_VERIFICATION_IN_PROGRESS')"  *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Process for Document Verification</button>
+            <button name="view-docs-verify-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFICATION_IN_PROGRESS'">View Document Details</button> -->
+            <!-- <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFIED'">Send for Approval</button> -->
+            <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Send for Approval</button>
             <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL'">Approve</button>
         </div>
         <div class="col-xs-4">

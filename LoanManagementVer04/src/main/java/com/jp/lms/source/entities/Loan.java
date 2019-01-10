@@ -33,7 +33,7 @@ public abstract class Loan {
 	@Column(name="CUSTOMER_ID")
 	private Long customerId;
 	
-	@Column(name="LOAN_APPROVE_DATE")
+	@Column(name="LOAN_APPROVED_DATE")
 	private Date loanApproveDate;
 	
 	@Column(name="DISPERSAL_DATE")

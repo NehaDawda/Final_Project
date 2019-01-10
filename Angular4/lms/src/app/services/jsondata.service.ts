@@ -12,8 +12,8 @@ export class JsondataService {
     return this.http.get('http://localhost:3001/credit_info/'+panNumber);
   }
 
-  getProspectDetails(prospectId){
-    return this.http.get('http://localhost:4530/prospects?prospectId='+prospectId);
+  getPropertyMarketValue(key:String){
+    return this.http.get('http://localhost:3002/value_info/'+key);
   }
 
   addNewProspect(newprospect: Prospect){

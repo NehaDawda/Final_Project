@@ -30,5 +30,9 @@ public class DaoPropertyImpl implements DaoProperty {
 		return property;
 	}
 
-	
+	@Override
+	public Long updateProperty(Property property) throws LmsException {
+		entityManager.merge(property);
+		return property.getPropertyId();
+	}
 }

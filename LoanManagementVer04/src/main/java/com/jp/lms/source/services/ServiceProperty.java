@@ -5,4 +5,6 @@ import com.jp.lms.source.exceptions.LmsException;
 
 public interface ServiceProperty {
 	public Long registerProperty(Property property) throws LmsException;
+	public Long updateProperty(Property property) throws LmsException;
+	public Property getPropertyDetails(Long propertyId) throws LmsException;
 }

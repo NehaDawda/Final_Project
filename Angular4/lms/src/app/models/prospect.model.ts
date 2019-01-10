@@ -16,5 +16,5 @@ export class Prospect {
     creditLimit:Number;
     lastUpdatedCreditDate:Date;
     applicationStatus:String;
-    prospectAssetId:String
+    prospectAssetId:Number
 }

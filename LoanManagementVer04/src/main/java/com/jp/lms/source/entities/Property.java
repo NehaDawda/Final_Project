@@ -18,6 +18,12 @@ public class Property {
 	@Column(name="PROPERTY_ID")
 	private Long propertyId;
 	
+	@Column(name="REGISTRATION_NUMBER")
+	private String registrationNumber;
+	
+	@Column(name="PROPERTY_TYPE")
+	private String propertyType;
+	
 	@Column(name="APARTMENT_NUMBER")
 	private String apartmentNo;
 	
@@ -48,6 +54,9 @@ public class Property {
 	@Column(name="PURCHASE_PRICE")
 	private Double purchasedPrice;
 	
+	@Column(name="MARKET_VALUE")
+	private Double marketValue;
+	
 	public Long getPropertyId() {
 		return propertyId;
 	}
@@ -56,6 +65,22 @@ public class Property {
 		this.propertyId = propertyId;
 	}
 	
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+
+	public String getPropertyType() {
+		return propertyType;
+	}
+
+	public void setPropertyType(String propertyType) {
+		this.propertyType = propertyType;
+	}
+
 	public String getApartmentNo() {
 		return apartmentNo;
 	}
@@ -136,13 +161,20 @@ public class Property {
 		this.purchasedPrice = purchasedPrice;
 	}
 
+	public Double getMarketValue() {
+		return marketValue;
+	}
+
+	public void setMarketValue(Double marketValue) {
+		this.marketValue = marketValue;
+	}
+
 	@Override
 	public String toString() {
-		return "Property [propertyId=" + propertyId + ", apartmentNo=" + apartmentNo + ", apartmentName="
-				+ apartmentName + ", streetName=" + streetName + ", locality=" + locality + ", landmark=" + landmark
-				+ ", city=" + city + ", state=" + state + ", country=" + country + ", zipCode=" + zipCode
-				+ ", purchasedPrice=" + purchasedPrice + "]";
+		return "Property [propertyId=" + propertyId + ", registrationNumber=" + registrationNumber + ", propertyType="
+				+ propertyType + ", apartmentNo=" + apartmentNo + ", apartmentName=" + apartmentName + ", streetName="
+				+ streetName + ", locality=" + locality + ", landmark=" + landmark + ", city=" + city + ", state="
+				+ state + ", country=" + country + ", zipCode=" + zipCode + ", purchasedPrice=" + purchasedPrice
+				+ ", marketValue=" + marketValue + "]";
 	}
-	
-	
 }

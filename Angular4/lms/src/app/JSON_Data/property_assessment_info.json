@@ -1,0 +1,32 @@
+{
+  "value_info": [
+      {
+          "id": "REG12345_2-BHK",
+          "propertyMarketValue": "700000"
+      },
+      {
+          "id": "REG12345_1-BHK",
+          "propertyMarketValue": "500000"
+      },
+      {
+          "id": "REG12345_3-BHK",
+          "propertyMarketValue": "800000"
+      },
+      {
+          "id": "REG34512/2-BHK",
+          "propertyMarketValue": "2500000"
+      },
+      {
+          "id": "REG34512_3-BHK",
+          "propertyMarketValue": "3500000"
+      },
+      {
+          "id": "REG88125_BUNGLOW",
+          "propertyMarketValue": "7500000"
+      },
+      {
+          "id": "REG34512_ROW_HOUSE",
+          "propertyMarketValue": "5000000"
+      }
+  ]
+}

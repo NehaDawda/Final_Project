@@ -23,5 +23,16 @@ public class ServicePropertyImpl implements ServiceProperty {
 		return daoProperty.addProperty(property);
 	}
 
+	@Override
+	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=LmsException.class)
+	public Long updateProperty(Property property) throws LmsException {
+		return daoProperty.updateProperty(property);
+	}
+
+	@Override
+	public Property getPropertyDetails(Long propertyId) throws LmsException {
+		return daoProperty.getPropertyDetails(propertyId);
+	}
+
 	
 }

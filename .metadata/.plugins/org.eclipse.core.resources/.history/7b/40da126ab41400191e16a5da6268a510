@@ -1,0 +1,70 @@
+package com.jp.lms.source.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jp.lms.source.entities.Prospect;
+import com.jp.lms.source.exceptions.LmsException;
+import com.jp.lms.source.services.ServiceApproveLoan;
+import com.jp.lms.source.services.ServiceNewLoanAppl;
+import com.jp.lms.source.services.ServiceProspect;
+
+//import com.jp.lms.source.services.ServiceProspect;
+
+
+
+/*
+ * @Controller: A kind of @Component to declare SpringMVC controllers.
+ * @RequestMapping: To map a controlling method to the URL.
+ * @RequestParam: To take single QueryString or FormData field value.
+ * 
+ * Multi-action controllers.
+ * 
+ * http://localhost:8082/prospects/list
+ * http://localhost:8082/Loan_Management_System/prospectDetails
+ * http://localhost:8082/Loan_Management_System/register
+ * 
+ */
+@CrossOrigin(origins = "*", allowedHeaders = "*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+@RestController
+public class ProspectController {
+	@Autowired
+	@Qualifier("service")
+	private ServiceProspect serviceProspect;
+	
+	@Autowired
+	@Qualifier("serviceNewLoanAppl")
+	private ServiceNewLoanAppl serviceNewLoanAppl;
+	
+	@Autowired
+	@Qualifier("serviceApproveLoan")
+	private ServiceApproveLoan serviceApproveLoan;
+	
+	
+	
+	@GetMapping(value="/prospectDetails/{id}",produces="application/json")
+	public Prospect getProspectDetails(@PathVariable(value="id") String prospectId){
+		Prospect prospect = null;
+		try {
+			prospect = serviceProspect.getProspectDetails(Long.valueOf(prospectId));
+		} catch (LmsException e) {
+			e.printStackTrace();
+		}
+		return prospect;
+	}
+	
+	@PutMapping(value="/updateProspect",consumes="application/json")
+	public Long updateProspectDetails(@RequestBody Prospect prospect) throws LmsException{
+		System.out.println("In Update, Date:"+prospect.getLastUpdatedCreditDate());
+		System.out.println(prospect);
+		return serviceProspect.updateProspect(prospect);
+	}
+}

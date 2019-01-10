@@ -10,4 +10,7 @@ export class Property {
     country:String;
     zipCode:String;
     purchasedPrice:Number;
+    registrationNumber: String;
+    propertyType:String;
+    marketValue: Number;
 }
