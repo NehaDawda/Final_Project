@@ -1,290 +1,155 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>
-                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
-                <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-        </title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
-    </head>
-    <body>
-        <div class="container">
-            
-            <div class="page-header">
-                <h1>Loan Application Form</h1>
-            </div>
-            <form class="form-horizontal"   #prospectform="ngForm" (ngSubmit)="addProspect(prospectform)">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="firstName">First Name</label>
-                    <div class="col-sm-10">
-                        <input class="form-cntrol" id="firstName" ngModel name="firstName" placeholder="Enter First Name" required/>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label class="col-sm-2 control-label" for="lastName" >Last Name</label>
-                        <div class="col-sm-10">
-                            <input class="form-cntrol" id="lastName" ngModel name="lastName" placeholder="Enter Last Name" required/>
-                        </div>
-                    </div>
-                <div class="form-group">
-                        <label class="col-sm-2 control-label" for="name">Address</label>
-                        <div class="col-sm-10">
-                            <input class="form-cntrol" id="address" ngModel name="address" placeholder="Enter Address" required/>
-                        </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="address" >Loan Type</label>
-                <select class="col-sm-2 control-label"  ngModel name="loanType" required>
-                        <option>Select Loan Type</option>
-                        <option value="HOME_LOAN">Home Loan</option>
-                        <option value="VEHICAL_LOAN">Vehicle Loan</option>
-                        <option value="EDUCATION_LOAN">Education Loan</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name" >Income</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="income"  ngModel name="income" placeholder="Enter Income" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name" >Required Loan Amount</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="reqla" ngModel name="requiredLoanAmt"  placeholder="Enter Required Loan Amount" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name"  >PAN Number</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="pan" ngModel name="panNumber"  placeholder="Enter PAN Number" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">ADHAAR Number</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="adhaar" ngModel name="aadharNumber"   placeholder="Enter ADHAAR Number" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Contact Number</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="contactnum" ngModel name="contactNumber"   placeholder="Enter Contact Number" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="name">Email</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="email" ngModel name="email" placeholder="Enter Email Address" required/>
-                </div>
-            </div>            
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="birthDate">Date of Birth*</label>
-                <div class="col-sm-4">
-                    <input type="date" id="birthDate"  ngModel name="dateOfBirth" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="city">City</label>
-                <div class="col-sm-10">
-                    <input class="form-cntrol" id="city" ngModel name="city" placeholder="Enter City" required/>
-                </div>
-            </div> 
-            <button type="submit" class="btn btn-primary" center>Apply</button>
-            </form>
-        </div>        
-    </body>
-</html>
+<script type="javascript">
+        
+    </script>
 
+<div class="container">
 
-
-
-<!-- <style>
-    input[type=text] {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-      }
-      
-      form {
-          width: 80%;
-          margin: 0 auto;
-      }
-      
-      label, input {
-          /* in order to define widths */
-          display: inline-block;
-      }
-      
-      label {
-          width: 30%;
-          /* positions the label text beside the input */
-          text-align: right;
-      }
-      
-      label + input {
-          width: 30%;
-          /* large margin-right to force the next element to the new-line
-             and margin-left to create a gutter between the label and input */
-          margin: 0 30% 0 4%;
-      }
-      
-      input + input {
-          float: right;
-      }
-      
-      button {
-        box-align: auto;
-      }
-      
-      </style> -->
-
-<!-- ================================================================================= -->
-<!--<h2> Registration Form </h2>
-<form>
+    <div class="page-header">
+        <h1>Loan Application Form</h1>
+    </div>
+    <form class="form-horizontal" #prospectform="ngForm" (ngSubmit)="addProspect(prospectform)">
         <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="userName" aria-describedby="userName" placeholder="Enter valid First Name">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" aria-describedby="lastName" placeholder="Enter valid Last Name">
+            <label class="col-sm-2 control-label" for="firstName">First Name</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="firstName" ngModel name="firstName" placeholder="Enter First Name"
+                    required />
+            </div>
+            <label class="col-sm-2 control-label" for="lastName">Last Name</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="lastName" ngModel name="lastName" placeholder="Enter Last Name" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">Address</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="address" ngModel name="address" placeholder="Enter Address" required />
+            </div>
+            <label class="col-sm-2 control-label" for="city">City</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="city" ngModel name="city" placeholder="Enter City" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">Income</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="income" ngModel name="income" placeholder="Enter Income" required />
+            </div>
+            <label class="col-sm-2 control-label" for="name">Required Loan Amount</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="reqla" ngModel name="requiredLoanAmt" placeholder="Enter Required Loan Amount"
+                    required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">PAN Number</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="pan" ngModel name="panNumber" placeholder="Enter PAN Number" required />
+            </div>
+            <label class="col-sm-2 control-label" for="name">ADHAAR Number</label>
+            <div class="col-sm-4">
+                <input class="form-cntrol" id="adhaar" ngModel name="aadharNumber" placeholder="Enter ADHAAR Number"
+                    required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="name">Contact Number</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-cntrol" id="contactnum" pattern="[0-9]{10}" ngModel name="contactNumber"
+                    placeholder="Enter Contact Number" required />
+            </div>
+            <label class="col-sm-2 control-label" for="name">Email</label>
+            <div class="col-sm-4">
+                <input type="email" class="form-cntrol" id="email" ngModel name="email" placeholder="Enter Email Address"
+                    required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="birthDate">Date of Birth*</label>
+            <div class="col-sm-4">
+                <input type="date" id="birthDate" ngModel name="dateOfBirth" class="form-control">
+            </div>
+            <label class="col-sm-2 control-label" for="address">Loan Type</label>
+            <select class="col-sm-2 control-label" id="loanType" ngModel name="loanType" required (change)="showSubElements()">
+                <option selected>Select Loan Type</option>
+                <option value="HOME_LOAN">Home Loan</option>
+                <option value="VEHICAL_LOAN">Vehicle Loan</option>
+                <option value="EDUCATION_LOAN">Education Loan</option>
+            </select>
+        </div>
+
+        <div id="propertyFields" style="display: none">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Apartment No</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="apartmentno" ngModel name="apartmentNo" placeholder="Enter Apartment Number"
+                        required />
+                </div>
+                <label class="col-sm-2 control-label" for="name">Apartment Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="apartmentname" ngModel name="apartmentName" placeholder="Enter Contact Number"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Street Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="streetname" ngModel name="streetName" placeholder="Enter Apartment Number"
+                        required />
+                </div>
+                <label class="col-sm-2 control-label" for="name">Locality</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="locality" ngModel name="locality" placeholder="Enter Contact Number"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Landmark</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="landmark" ngModel name="landmark" placeholder="Enter Apartment Number"
+                        required />
+                </div>
+                <label class="col-sm-2 control-label" for="name">City</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="city" ngModel name="city" placeholder="Enter Contact Number"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">State</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="state" ngModel name="state" placeholder="Enter Apartment Number"
+                        required />
+                </div>
+                <label class="col-sm-2 control-label" for="name">Country</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="country" ngModel name="country" placeholder="Enter Contact Number"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="name">Zip Code</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="zipCode" ngModel name="zipCode" placeholder="Enter Apartment Number"
+                        required />
+                </div>
+                <label class="col-sm-2 control-label" for="name">Purchased Price</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-cntrol" id="purchasedPrice" ngModel name="purchasedPrice"
+                        placeholder="Enter Contact Number" required />
+                </div>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary" center [disabled]="prospectform.invalid">Apply</button>
+    </form>
 </div>
-</form>
--->
 
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>Loan Management System</title>
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  
-</head>
-
-<form #frm="ngForm" (ngSubmit)="addProspect(frm)" *ngIf="!toggleForm">
-<body>
-      <div class="container">
-          <form class="form-horizontal" role="form">
-              <form data-toggle="validator" role="form">
-              <h3>Registration Form</h3>
-              <div class="form-group">              
-                  <label for="firstName" class="col-sm-3 control-label">First Name</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus required>                    
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="lastName" placeholder="Last Name" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="address" class="col-sm-3 control-label">Address</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="address" placeholder="Please Enter valid Address" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="address" class="col-sm-3 control-label">Loan Type</label>
-                  <br>
-              <select class="form-control">
-                  <option>Home Loan</option>
-                  <option>Vehicle Loan</option>
-                  <option>Education Loan</option>
-              </select>
-              </div>
-              <div class="form-group">
-                  <label for="income" class="col-sm-3 control-label">Income</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="income" placeholder="Please enter Annual Income" class="form-control" autofocus required>
-                    </div>
-              </div>
-              <div class="form-group">
-                  <label for="requiredLoanAmt" class="col-sm-3 control-label">Required Loan Amount</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="requiredLoanAmt" placeholder="Please Enter required Loan Amount" class="form-control" autofocus required>
-                    </div>
-              </div>
-              <div class="form-group">
-                  <label for="panNumber" class="col-sm-3 control-label">PAN Number</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="panNumber" placeholder="Please Enter valid PAN Number" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="aadharNumber" class="col-sm-3 control-label">Adhaar Number</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="aadharNumber" placeholder="Please Enter valid Adhaar Number" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="contactNumber" class="col-sm-3 control-label">Contact Number</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="contactNumber" placeholder="Please Enter Contact Number" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="email" class="col-sm-3 control-label">Email* </label>
-                  <div class="col-sm-9">
-                      <input type="email" id="email" placeholder="Email" class="form-control" name= "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="enquiryDate" class="col-sm-3 control-label">Enquiry Date</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="enquiryDate" placeholder="Enquiry Date" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="container">
-                  <div class="row">
-                      <div class='col-sm-6'>
-                          <div class="form-group">
-                              <div class='input-group date' id='datetimepicker3'>
-                                  <input type='text' class="form-control" />
-                                  <span class="input-group-addon">
-                                      <span class="glyphicon glyphicon-time"></span>
-                                  </span>
-                              </div>
-                          </div>
-                      </div>
-                      <script type="text/javascript">
-                          $(function () {
-                              $('#datetimepicker3').datetimepicker({
-                                  format: 'LT'
-                              });
-                          });
-                      </script>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="city" class="col-sm-3 control-label">City</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="city" placeholder="City" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="creditLimit" class="col-sm-3 control-label">Credit Limit</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="creditLimit" placeholder="Credit Limit" class="form-control" autofocus required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="lastUpdatedCreditDate" class="col-sm-3 control-label">Last Updated Credit Date</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="lastUpdatedCreditDate" placeholder="Credit Limit" class="form-control" autofocus required>
-                  </div>
-              </div>              
-              <button type="submit" class="btn btn-primary btn-block" onclick="javascript:validate()">Register</button>
-              </form>
-          </form> 
-      </div>
-</body>
-</html>
-
-
- -->
