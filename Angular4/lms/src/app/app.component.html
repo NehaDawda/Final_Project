@@ -17,7 +17,7 @@
       <li routerLinkActive="active">
         <a routerLink="registration">Loan Application</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
           <a routerLink="prospectlist">Prospect List</a>
       </li>
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
