@@ -1,6 +1,6 @@
-<div>
-        welcome {{sharedDataService.loggedInUser.empName}}
-      </div>
+<div *ngIf="sharedDataService.loggedInUser" class="text-right" style="font-style: italic; font-weight: bold; font-size: medium">
+    Welcome {{sharedDataService.loggedInUser.empName}}
+</div>
 <div class="container">
 
     <form class="form-horizontal" #prospectform="ngForm" (ngSubmit)="addProspect(prospectform)">

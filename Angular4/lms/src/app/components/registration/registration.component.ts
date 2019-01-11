@@ -69,7 +69,7 @@ export class RegistrationComponent implements OnInit {
 
     console.log(this.NewProspect)
     this._prospectlistservice.addNewProspect(this.NewProspect, this.NewProperty).subscribe((prospectId) => { 
-      this.newID=prospectId;
+      this.newID=<Number> prospectId;
       this.NewProperty=null;
       this.NewProspect=null;
       prospectform.value.registrationNumber="";

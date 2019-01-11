@@ -1,13 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}
-  </h1>
-</div>
-
-<div>
-  <div style="padding:5px">
-    <ul class="nav nav-tabs">
+<img src="/assets/images/loan.jpg" class="siteLogo siteLogo--tiny" />
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="Home" style="padding-top: 0px; padding-left: 0px; padding-right: 0px" >
+        <img src="/assets/images/loan_logo.jpg" class="img-rounded" style="max-height: 150%"/>
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
       <li routerLinkActive="active">
         <a routerLink="Home">Home</a>
       </li>
@@ -18,20 +18,17 @@
         <a routerLink="registration">Loan Application</a>
       </li>
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
-          <a routerLink="prospectlist">Prospect List</a>
+        <a routerLink="prospectlist">Prospect List</a>
       </li>
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser && sharedDataService.loggedInUser.empType=='MANAGER'">
-          <a routerLink="approveloans">Approve Loans</a>
+        <a routerLink="approveloans">Approve Loans</a>
       </li>
       <li routerLinkActive="active" *ngIf="sharedDataService.loggedInUser">
         <a routerLink="logout">Logout</a>
       </li>
-      
-
     </ul>
-    <br>
-    <router-outlet></router-outlet>
   </div>
-</div>
+  
+</nav>
 
-
+<router-outlet></router-outlet>

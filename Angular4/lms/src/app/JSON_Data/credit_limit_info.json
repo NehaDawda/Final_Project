@@ -13,12 +13,12 @@
         {
             "id": "KRTYQ2345A",
             "creditLimit": "7500000",
-            "lastUpdatedCreditDate": ""
+            "lastUpdatedCreditDate": "2018-05-21"
         },
         {
             "id": "ABCDE1234F",
             "creditLimit": "2500000",
-            "lastUpdatedCreditDate": "2018-12-2"
+            "lastUpdatedCreditDate": "2018-12-02"
         }
     ]
 }

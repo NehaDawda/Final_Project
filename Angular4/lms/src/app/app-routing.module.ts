@@ -10,6 +10,7 @@ import { ApproveloansComponent } from './components/approveloans/approveloans.co
 
 
 const appRoutes:Routes = [
+  {path:'', component:HomeComponent},
   {path:'Home', component:HomeComponent},
   {path: 'registration', component:RegistrationComponent},
   {path: 'login', component:LoginComponent},

@@ -1,15 +1,15 @@
-<div>
-    welcome {{sharedDataService.loggedInUser.empName}}
-  </div>
+<div class="text-right" style="font-style: italic; font-weight: bold; font-size: medium">
+      Welcome {{sharedDataService.loggedInUser.empName}}
+</div>
 <div class="container" *ngIf="!toggleProspectDetails">
-  <div class="panel panel-primary ">
-    <div class="panel-heading">
+  <div class="panel panel-primary " style="background-color: forestgreen; border-width: 2px;border-color: black">
+    <div class="panel-heading" style="background-color: forestgreen; border-width: 2px;border-color: black">
       <h3 class="panel-title">Loan Prospect List</h3>
     </div>
   </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead class="thead-dark">
+  <div class="panel-body" >
+    <table class="table table-striped" >
+      <thead style="background-color: darkgray">
         <tr>
           <th>Prospect ID</th>
           <th>First Name</th>
@@ -28,7 +28,7 @@
           <td>{{p.loanType}}</td>
           <td>{{p.requiredLoanAmt}}</td>
           <td>{{p.applicationStatus}}</td>
-          <td><button class="btn btn-primary" type="submit" name="ShowDetails" value="ShowDetails" (click)="showProspectDetails(p.prospectId)">Show
+          <td><button class="btn btn-primary" type="submit" name="ShowDetails" value="ShowDetails" (click)="showProspectDetails(p.prospectId)" style="background-color: black; border-color: springgreen; border-width: 2px">Show
               Details</button></td>
         </tr>
       </tbody>
@@ -39,7 +39,7 @@
 <div *ngIf="toggleProspectDetails">
   <form #prospectdetailsform="ngForm">
     <div class="panel panel-primary">
-      <div class="panel-heading">
+      <div class="panel-heading" style="background-color: forestgreen; border-width: 2px;border-color: black">
         <h3 class="panel-title">Prospect ID : {{prospect_detail.prospectId}}</h3>
       </div>
       <div class="panel-body">
@@ -163,7 +163,9 @@
               : {{prospect_detail.lastUpdatedCreditDate | date : 'dd-MMM-yyyy'}}
             </div>
           </div>
-
+          <br/>
+          <h4 style="font-weight: bold">Property Details:</h4>
+         
           <div class="row">
             <div class="col-xs-2">
               Registration Number
@@ -272,28 +274,35 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-4">
-          <button name="get-credit-button" class="btn btn-success" (click)="updateCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'NEW'">Get
+        <div class="col-xs-2"></div>
+        <div class="col-xs-3">
+          <button name="get-credit-button" class="btn btn-success" (click)="updateCreditLimit()" *ngIf="prospect_detail.applicationStatus == 'NEW'"
+            style="background-color: black; border-color: springgreen; border-width: 2px">Get
             Credit Limit</button>
           <button name="aprove-credit-button" class="btn btn-success" (click)="updateApplStatus('CREDIT_LIMIT_APPROVED')"
-            *ngIf="prospect_detail.applicationStatus == 'CREDIT_REVIEW_IN_PROGRESS'">Approve Credit Limit</button>
-          <button name="process-assessment-button" class="btn btn-success" (click)="updateMarketValue()" *ngIf="prospect_detail.applicationStatus == 'CREDIT_LIMIT_APPROVED'">Process
+            *ngIf="prospect_detail.applicationStatus == 'CREDIT_REVIEW_IN_PROGRESS'" style="background-color: black; border-color: springgreen; border-width: 2px">Approve
+            Credit Limit</button>
+          <button name="process-assessment-button" class="btn btn-success" (click)="updateMarketValue()" *ngIf="prospect_detail.applicationStatus == 'CREDIT_LIMIT_APPROVED'"
+            style="background-color: black; border-color: springgreen; border-width: 2px">Process
             for Assessment</button>
           <button name="view-assessment-button" class="btn btn-success" (click)="updateApplStatus('ASSESSMENT_APPROVED')"
-            *ngIf="prospect_detail.applicationStatus == 'ASESSMENT_IN_PROGRESS'">Approve Assessment</button>
+            *ngIf="prospect_detail.applicationStatus == 'ASESSMENT_IN_PROGRESS'" style="background-color: black; border-color: springgreen; border-width: 2px">Approve
+            Assessment</button>
           <!-- <button name="process-docs-verify-button" class="btn btn-success" (click)="updateApplStatus('DOCS_VERIFICATION_IN_PROGRESS')"  *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Process for Document Verification</button>
             <button name="view-docs-verify-button" class="btn btn-success" (click)="abc()" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFICATION_IN_PROGRESS'">View Document Details</button> -->
           <!-- <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')" *ngIf="prospect_detail.applicationStatus == 'DOCS_VERIFIED'">Send for Approval</button> -->
           <button name="send-approval-button" class="btn btn-success" (click)="updateApplStatus('PENDING_APPROVAL')"
-            *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'">Send for Approval</button>
-          <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL' && sharedDataService.loggedInUser.empType=='MANAGER'">Approve</button>
+            *ngIf="prospect_detail.applicationStatus == 'ASSESSMENT_APPROVED'" style="background-color: black; border-color: springgreen; border-width: 2px">Send
+            for Approval</button>
+          <button name="approve-button" class="btn btn-success" (click)="approveLoanAppl()" *ngIf="prospect_detail.applicationStatus == 'PENDING_APPROVAL' && sharedDataService.loggedInUser.empType=='MANAGER'"
+            style="background-color: black; border-color: springgreen; border-width: 2px">Approve</button>
         </div>
-        <div class="col-xs-4">
-          <button name="back-button" class="btn btn-danger" (click)="updateApplStatus('REJECTED')" *ngIf="prospect_detail.applicationStatus != 'REJECTED'">Reject
+        <div class="col-xs-3">
+          <button name="back-button" class="btn btn-danger" (click)="updateApplStatus('REJECTED')" *ngIf="prospect_detail.applicationStatus != 'REJECTED'" style="border-color: springgreen; border-width: 2px">Reject
             Loan Application</button>
         </div>
-        <div class="col-xs-4">
-          <button name="back-button" class="btn btn-success" (click)="showProspectList()">Back to Prospect List</button>
+        <div class="col-xs-3">
+          <button name="back-button" class="btn btn-success" (click)="showProspectList()" style="background-color: black; border-color: springgreen; border-width: 2px">Back to Prospect List</button>
         </div>
       </div>
     </div>

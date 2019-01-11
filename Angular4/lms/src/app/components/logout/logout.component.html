@@ -1,7 +1,7 @@
-<div>
-    welcome {{sharedDataService.loggedInUser.empName}}
-  </div>
+<div class="text-right" style="font-style: italic; font-weight: bold; font-size: medium">
+        Welcome {{sharedDataService.loggedInUser.empName}}
+</div>
 
-<div>
-    <button type="button" class="btn btn-primary" (click)="logout()">LOGOUT</button>
+<div align="center">
+    <button type="button" class="btn btn-primary" (click)="logout()" style="background-color: black; border-color: springgreen; border-width: 2px">LOGOUT</button>
 </div>

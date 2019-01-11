@@ -42,6 +42,7 @@ export class ProspectListComponent implements OnInit {
 
   showProspectList() {
     this.toggleProspectDetails = false;
+    this._prospectlistservice.getProspects().subscribe(prospectList => { this.prospectlist = prospectList });
   }
 
   updateApplStatus(status: String) {
